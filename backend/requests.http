@@ -1,0 +1,7 @@
+@baseUrl = http://virtualwater.local
+
+###
+GET {{baseUrl}}/products
+
+###
+GET {{baseUrl}}/products/5
