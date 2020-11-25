@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import getProducts from './services/getProducts';
 import getProductById from './services/getProductById';
 
-
-function App() {
+export default function App() {
 
   const [products, setProducts] = useState([])
   const [productById, setProductById] = useState([])
@@ -15,7 +14,8 @@ function App() {
   }, [])
 
   useEffect(() => {
-    getProductById(3)
+    const productId = 2
+    getProductById(productId)
     .then(data => setProductById(data))
     .catch(error => console.log(error))
   }, [])
@@ -36,8 +36,3 @@ function App() {
     </div>
   );
 }
-
-
-
-
-export default App;
