@@ -6,7 +6,7 @@ export default function App() {
   return (
       <Switch>
         <Route exact path="/">
-          <ProductPage productId={4} />
+          <ProductPage productId={2} />
         </Route>
       </Switch>
   );
