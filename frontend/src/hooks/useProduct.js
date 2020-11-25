@@ -6,7 +6,7 @@ export default function useProduct(productId) {
 
     const [product, setProduct] = useState({
         name: '',
-        water: '',
+        water: null,
     })
 
     const [photo, setPhoto] = useState({
