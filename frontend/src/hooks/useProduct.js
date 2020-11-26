@@ -24,7 +24,8 @@ export default function useProduct(productId) {
     }, [productId])
 
     useEffect(() => {
-        getPhoto(product.name)
+        if (product.name !== "") {
+            getPhoto(product.name)
             .then(data => {
                 const photoData = data.photos[0]
                 setPhoto({
@@ -33,8 +34,8 @@ export default function useProduct(productId) {
                     pexelUrl: photoData['url']})
             })
             .catch(error => console.log(error))
-      }, [product.name])
-
+        }        
+    }, [product.name])
 
     return {
         product,
