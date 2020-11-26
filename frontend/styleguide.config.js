@@ -9,4 +9,7 @@ module.exports = {
     styleguideComponents: {
         Wrapper: path.join(__dirname, 'src/styles/StyleWrapper'),
     },
+    theme: {
+        maxWidth: 600
+    }
 }

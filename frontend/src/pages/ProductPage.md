@@ -1,3 +1,3 @@
 ```js
-<ProductPage productId={'4'} />
+<ProductPage productId={'3'} />
 ```
