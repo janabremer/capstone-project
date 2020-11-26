@@ -1,6 +1,6 @@
 import {Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import ProductPage from './products/ProductPage'
+import ProductPage from './pages/ProductPage'
 
 export default function App() {
 
@@ -8,7 +8,7 @@ export default function App() {
       <AppLayout>
         <Switch>
           <Route exact path="/">
-            <ProductPage productId={3} />
+            <ProductPage productId={2} />
           </Route>
         </Switch>
       </AppLayout>

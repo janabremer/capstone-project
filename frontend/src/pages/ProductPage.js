@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import useProduct from '../hooks/useProduct'
-import Photo from '../components/Photo'
-import ProductInfo from './ProductInfo'
+import Photo from '../components/ProductPhoto'
+import ProductInfo from '../components/ProductInfo'
 
 export default function ProductPage({productId}) {
     const {product, photo} = useProduct(productId)
