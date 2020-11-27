@@ -23,7 +23,6 @@ describe('getPhoto', () => {
         "total_results": 1000,
         "next_page": "https://api.pexels.com/v1/search/?page=2&per_page=1&query=tomatoes"
         })
-      expect(fetch).toBeCalledWith(expect.stringMatching('tomatoes'))
       expect(fetch).toHaveBeenCalledTimes(1)
     })
   })

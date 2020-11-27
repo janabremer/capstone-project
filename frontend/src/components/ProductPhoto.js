@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro'
 
 export default function ProductPhoto({url, photographer}) {
-    console.log(photographer)
     return(
         <ImgStyled src={url} alt="" width="300px"/>
     )
