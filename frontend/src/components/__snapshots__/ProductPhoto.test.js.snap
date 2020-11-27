@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductPhoto renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+<img
+  alt=""
+  class="c0"
+  src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&h=350"
+  width="300px"
+/>
+`;
