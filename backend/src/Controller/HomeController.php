@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->json([
-            'message' => 'Welcome to the virtal water API',
+            'message' => 'Welcome to the virtual water API',
             'all products' => '/products',
             'product by id' => '/products/id',
         ]);

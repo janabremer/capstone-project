@@ -34,7 +34,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/products/{id}", methods={"GET"})
      */
-    public function findId(
+    public function getById(
         int $id, 
         ProductRepository $repository, 
         SerializerInterface $serializer): JsonResponse 
