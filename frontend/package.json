@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "jest-styled-components": "^7.0.3",
     "react-styleguidist": "^11.1.4"
   }
 }
