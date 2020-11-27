@@ -1,7 +1,9 @@
 import styled from 'styled-components/macro'
 import ProductInfo from '../components/ProductInfo'
+import useProduct from '../hooks/useProduct'
 
-export default function ProductPage({product, photo}) {
+export default function ProductPage({productId}) {
+    const {product, photo} = useProduct(productId)
 
     return(
         <PageStyled imgUrl={photo.url}>
