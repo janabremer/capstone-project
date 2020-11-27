@@ -29,7 +29,7 @@ export default function useProduct(productId) {
                 const photoData = data.photos[0]
                 setPhoto({
                     photographer: photoData['photographer'],
-                    url: photoData['src'].medium,
+                    url: photoData['src'].large,
                     pexelUrl: photoData['url']})
             })
             .catch(error => console.log(error))

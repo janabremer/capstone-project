@@ -6,20 +6,31 @@ export default function ProductInfo ({name, water}) {
     return(
         <ProductInfoStyled>
             <Heading>{name}</Heading>
-            <p>virtual water: {water} litres/kg</p>
+            <Content>{water} litres (1kg)</Content>
+
         </ProductInfoStyled>
     )
 }
 
 const ProductInfoStyled = styled.section`
+    background-color: var(--primary-light-transparent);
+    border-radius: 5px;
+    box-shadow:  0px 0px 20px var(--shadow-dark);
     display: grid;
-    justify-items: center;
     gap: var(--gap-medium);
+    opacity: 0.6; 
+    padding: 25px;
+    place-items: center;
+    width: 100%;
 `
 
 const Heading = styled.h2`
     color: var(--primary-blue);
-    text-transform: uppercase;
     font-weight: 450;
     letter-spacing: .15em;
+    text-transform: uppercase;
+`
+
+const Content = styled.span`
+    font-size: 130%;
 `

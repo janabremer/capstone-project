@@ -3,25 +3,27 @@ import { createGlobalStyle } from 'styled-components/macro'
 export default createGlobalStyle`
 *{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 :root {
-    --primary-blue: #00BBE9;
-    --primary-light: #F5F9FA;
-    --primary-dark: #003D4D;
-
-    --gap-medium: 20px;
     --gap-large: 40px;
+    --gap-medium: 20px;
+    --primary-blue: rgb(0, 187, 233);
+    --primary-dark: rgb(0, 61, 77);
+    --primary-light: rgb(245, 249, 250);
+    --primary-light-transparent: rgba(245, 249, 250, 0.9);
+    --shadow-dark: rgba(0, 61, 77, 0.25);
+    --shadow-light: rgba(245, 249, 250, 0.25);
 }
 
 body {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
     font-family: Roboto, sans-serif;
     font-size: 112.5%;
-    max-width: 600px;
-    color: var(--primary-dark);
-    background-color: var(--primary-light;
     height: 100vh;
+    max-width: 600px;
 }
 `

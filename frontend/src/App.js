@@ -1,20 +1,18 @@
 import {Route, Switch } from 'react-router-dom'
-import styled from 'styled-components/macro'
 import ProductPage from './pages/ProductPage'
+import useProduct from './hooks/useProduct'
 
 export default function App() {
+  const productId = 1
+  const {product, photo} = useProduct(productId)
 
   return (
-      <AppLayout>
+      <App>
         <Switch>
           <Route exact path="/">
-            <ProductPage productId={2} />
+            <ProductPage product={product} photo={photo} /> 
           </Route>
         </Switch>
-      </AppLayout>
+      </App>
   );
 }
-
-const AppLayout = styled.div`
-    padding: 40px;
-`
