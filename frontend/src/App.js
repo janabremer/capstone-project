@@ -1,14 +1,19 @@
 import {Route, Switch } from 'react-router-dom'
-import ProductPage from './pages/ProductPage'
+import Gallery from './components/Gallery'
+
 
 export default function App() {
 
   return (
       <>
+        
         <Switch>
-          <Route exact path="/">
-            <ProductPage productId={1} /> 
-          </Route>
+          
+            <Route exact path="/">
+              <Gallery />
+
+             
+            </Route>
         </Switch>
       </>
   );

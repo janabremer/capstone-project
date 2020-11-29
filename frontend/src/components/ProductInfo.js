@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro'
 
 export default function ProductInfo ({name, water}) {
-
-
     return(
         <ProductInfoStyled>
             <Heading>{name}</Heading>

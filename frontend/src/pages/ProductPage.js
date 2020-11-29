@@ -22,4 +22,6 @@ const PageStyled = styled.main`
     height: 100vh;
     padding: 40px;
     place-items: end;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
 `

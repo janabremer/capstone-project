@@ -19,7 +19,7 @@ export default createGlobalStyle`
 }
 
 body {
-    background-color: var(--primary-light);
+    /* background-color: var(--primary-light); */
     color: var(--primary-dark);
     font-family: Roboto, sans-serif;
     font-size: 112.5%;
