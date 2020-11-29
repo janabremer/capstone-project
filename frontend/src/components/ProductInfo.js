@@ -12,7 +12,7 @@ export default function ProductInfo ({name, water}) {
 
 const ProductInfoStyled = styled.section`
     background-color: var(--primary-light-transparent);
-    border-radius: 5px;
+    border-radius: 25px;
     box-shadow:  0px 0px 20px var(--shadow-dark);
     display: grid;
     gap: var(--gap-medium);

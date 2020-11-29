@@ -4,7 +4,6 @@ import useProduct from '../hooks/useProduct'
 
 export default function ProductPage({productId}) {
     const {product, photo} = useProduct(productId)
-
     return(
         <PageStyled imgUrl={photo.url}>
             <ProductInfo name={product.name} water={product.water}/>

@@ -3,7 +3,7 @@ import getProducts from '../services/getProducts'
 import { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 
-export default function Gallery () {
+export default function Gallery() {
     const [products, setProducts] = useState([])
     useEffect(() => {
         getProducts()
@@ -13,7 +13,9 @@ export default function Gallery () {
 
     return(
         <GalleryStyled>
-            {products.map(product => <ProductPage key={product.id} productId={product.id} />)}
+            {products.map(product =>
+                <ProductPage key={product.id} productId={product.id} />
+            )}
         </GalleryStyled>
     )
 }
