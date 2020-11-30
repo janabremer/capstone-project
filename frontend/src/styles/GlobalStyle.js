@@ -13,13 +13,13 @@ export default createGlobalStyle`
     --primary-blue: rgb(0, 187, 233);
     --primary-dark: rgb(0, 61, 77);
     --primary-light: rgb(245, 249, 250);
-    --primary-light-transparent: rgba(245, 249, 250, 0.9);
+    --primary-light-transparent: rgba(245, 249, 250, 0.7);
     --shadow-dark: rgba(0, 61, 77, 0.25);
     --shadow-light: rgba(245, 249, 250, 0.25);
 }
 
 body {
-    background-color: var(--primary-light);
+    /* background-color: var(--primary-light); */
     color: var(--primary-dark);
     font-family: Roboto, sans-serif;
     font-size: 112.5%;

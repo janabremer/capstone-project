@@ -4,7 +4,6 @@ import useProduct from '../hooks/useProduct'
 
 export default function ProductPage({productId}) {
     const {product, photo} = useProduct(productId)
-
     return(
         <PageStyled imgUrl={photo.url}>
             <ProductInfo name={product.name} water={product.water}/>
@@ -22,4 +21,6 @@ const PageStyled = styled.main`
     height: 100vh;
     padding: 40px;
     place-items: end;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
 `
