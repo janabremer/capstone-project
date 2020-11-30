@@ -16,7 +16,6 @@ const ProductInfoStyled = styled.section`
     box-shadow:  0px 0px 20px var(--shadow-dark);
     display: grid;
     gap: var(--gap-medium);
-    opacity: 0.6; 
     padding: 25px;
     place-items: center;
     width: 100%;
