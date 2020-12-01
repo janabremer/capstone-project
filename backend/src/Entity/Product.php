@@ -30,7 +30,7 @@ class Product
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $water;
+    private $total_water;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -77,14 +77,14 @@ class Product
         return $this;
     }
 
-    public function getWater(): ?int
+    public function getTotalWater(): ?int
     {
-        return $this->water;
+        return $this->totalWater;
     }
 
-    public function setWater(int $water): self
+    public function setTotalWater(int $water): self
     {
-        $this->water = $water;
+        $this->totalWater = $totalWater;
 
         return $this;
     }

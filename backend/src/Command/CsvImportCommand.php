@@ -60,7 +60,9 @@ class CsvImportCommand extends Command
         $csv->setDelimiter(';');
         $records = $csv->getRecords();
 
-        foreach ($csv as $index => $row) {
+        $io->progressStart(iterator_count($records));
+
+        foreach ($records as $index => $row) {
             $product = (new Product())
             ->setName($row[1])
             ->setCategory($row[2])
@@ -68,10 +70,12 @@ class CsvImportCommand extends Command
             ->setBlueWater(intval($row[4]))
             ->setGreyWater(intval($row[5]));
             $this->em->persist($product);
+
+            $io->progressAdvance();
         }
-
+            $io->progressFinish();
+            
             $this->em->flush();
-
 
         $io->success('Command exited cleanly');
 
