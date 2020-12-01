@@ -63,17 +63,20 @@ class CsvImportCommand extends Command
         $io->progressStart(iterator_count($records));
 
         foreach ($records as $index => $row) {
-            $product = (new Product())
-                ->setId($row[0])
-                ->setName($row[1])
-                ->setCategory($row[2])
-                ->setGreenWater(intval($row[3]))
-                ->setBlueWater(intval($row[4]))
-                ->setGreyWater(intval($row[5]))
-                ->setTotalWater(intval($row[3]) + intval($row[4]) + intval($row[5]));
-        
-            $this->em->persist($product);
-            $io->progressAdvance();
+            if($row[0] != 0) {
+                $product = (new Product())
+                    ->setId($row[0])
+                    ->setName($row[1])
+                    ->setCategory($row[2])
+                    ->setGreenWater(intval($row[3]))
+                    ->setBlueWater(intval($row[4]))
+                    ->setGreyWater(intval($row[5]))
+                    ->setTotalWater(intval($row[3]) + intval($row[4]) + intval($row[5]));
+            
+                $this->em->persist($product);
+                $io->progressAdvance();
+            }
+            
         }
             $io->progressFinish();
 
