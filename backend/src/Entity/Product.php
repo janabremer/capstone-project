@@ -30,22 +30,22 @@ class Product
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $total_water;
+    private $totalWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $green_water;
+    private $greenWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $blue_water;
+    private $blueWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $grey_water;
+    private $greyWater;
 
 
     public function getId(): ?int
@@ -82,45 +82,45 @@ class Product
         return $this->totalWater;
     }
 
-    public function setTotalWater(int $total_water): self
+    public function setTotalWater(int $totalWater): self
     {
-        $this->total_water = $total_water;
+        $this->totalWater = $total_water;
 
         return $this;
     }
 
     public function getGreenWater(): ?int
     {
-        return $this->green_water;
+        return $this->greenWater;
     }
 
-    public function setGreenWater(?int $green_water): self
+    public function setGreenWater(?int $greenWater): self
     {
-        $this->green_water = $green_water;
+        $this->greenWater = $green_water;
 
         return $this;
     }
 
     public function getBlueWater(): ?int
     {
-        return $this->blue_water;
+        return $this->blueWater;
     }
 
-    public function setBlueWater(?int $blue_water): self
+    public function setBlueWater(?int $blueWater): self
     {
-        $this->blue_water = $blue_water;
+        $this->blueWater = $blue_water;
 
         return $this;
     }
 
     public function getGreyWater(): ?int
     {
-        return $this->grey_water;
+        return $this->greyWater;
     }
 
-    public function setGreyWater(?int $grey_water): self
+    public function setGreyWater(?int $greyWater): self
     {
-        $this->grey_water = $grey_water;
+        $this->greyWater = $grey_water;
 
         return $this;
     }
