@@ -12,7 +12,6 @@ class Product
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -53,6 +52,13 @@ class Product
         return $this->id;
     }
 
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     public function getName(): ?string
     {
         return $this->name;
@@ -82,7 +88,7 @@ class Product
         return $this->totalWater;
     }
 
-    public function setTotalWater(int $totalWater): self
+    public function setTotalWater(int $total_water): self
     {
         $this->totalWater = $total_water;
 
@@ -94,7 +100,7 @@ class Product
         return $this->greenWater;
     }
 
-    public function setGreenWater(?int $greenWater): self
+    public function setGreenWater(?int $green_water): self
     {
         $this->greenWater = $green_water;
 
@@ -106,7 +112,7 @@ class Product
         return $this->blueWater;
     }
 
-    public function setBlueWater(?int $blueWater): self
+    public function setBlueWater(?int $blue_water): self
     {
         $this->blueWater = $blue_water;
 
@@ -118,7 +124,7 @@ class Product
         return $this->greyWater;
     }
 
-    public function setGreyWater(?int $greyWater): self
+    public function setGreyWater(?int $grey_water): self
     {
         $this->greyWater = $grey_water;
 

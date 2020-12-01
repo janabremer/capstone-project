@@ -64,6 +64,7 @@ class CsvImportCommand extends Command
 
         foreach ($records as $index => $row) {
             $product = (new Product())
+                ->setId($row[0])
                 ->setName($row[1])
                 ->setCategory($row[2])
                 ->setGreenWater(intval($row[3]))
