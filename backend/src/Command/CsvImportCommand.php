@@ -64,17 +64,18 @@ class CsvImportCommand extends Command
 
         foreach ($records as $index => $row) {
             $product = (new Product())
-            ->setName($row[1])
-            ->setCategory($row[2])
-            ->setGreenWater(intval($row[3]))
-            ->setBlueWater(intval($row[4]))
-            ->setGreyWater(intval($row[5]));
+                ->setName($row[1])
+                ->setCategory($row[2])
+                ->setGreenWater(intval($row[3]))
+                ->setBlueWater(intval($row[4]))
+                ->setGreyWater(intval($row[5]))
+                ->setTotalWater(intval($row[3]) + intval($row[4]) + intval($row[5]));
+        
             $this->em->persist($product);
-
             $io->progressAdvance();
         }
             $io->progressFinish();
-            
+
             $this->em->flush();
 
         $io->success('Command exited cleanly');

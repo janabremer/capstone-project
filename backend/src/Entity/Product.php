@@ -82,9 +82,9 @@ class Product
         return $this->totalWater;
     }
 
-    public function setTotalWater(int $water): self
+    public function setTotalWater(int $total_water): self
     {
-        $this->totalWater = $totalWater;
+        $this->total_water = $total_water;
 
         return $this;
     }
