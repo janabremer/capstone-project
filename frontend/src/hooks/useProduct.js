@@ -18,8 +18,8 @@ export default function useProduct(productId) {
     useEffect(() => {
         getProductById(productId)
             .then(data => setProduct({
-                name: data.name, 
-                water: data.virtualWater}))
+                name: data.category, 
+                water: data.water}))
             .catch(error => console.log(error))
     }, [productId])
 

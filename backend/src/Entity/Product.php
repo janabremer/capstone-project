@@ -22,10 +22,31 @@ class Product
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="float")
+     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $virtualWater;
+    private $category;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $water;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $green_water;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $blue_water;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $grey_water;
+
 
     public function getId(): ?int
     {
@@ -44,14 +65,62 @@ class Product
         return $this;
     }
 
-    public function getVirtualWater(): ?float
+    public function getCategory(): ?string
     {
-        return $this->virtualWater;
+        return $this->category;
     }
 
-    public function setVirtualWater(float $virtualWater): self
+    public function setCategory(?string $category): self
     {
-        $this->virtualWater = $virtualWater;
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getWater(): ?int
+    {
+        return $this->water;
+    }
+
+    public function setWater(int $water): self
+    {
+        $this->water = $water;
+
+        return $this;
+    }
+
+    public function getGreenWater(): ?int
+    {
+        return $this->green_water;
+    }
+
+    public function setGreenWater(?int $green_water): self
+    {
+        $this->green_water = $green_water;
+
+        return $this;
+    }
+
+    public function getBlueWater(): ?int
+    {
+        return $this->blue_water;
+    }
+
+    public function setBlueWater(?int $blue_water): self
+    {
+        $this->blue_water = $blue_water;
+
+        return $this;
+    }
+
+    public function getGreyWater(): ?int
+    {
+        return $this->grey_water;
+    }
+
+    public function setGreyWater(?int $grey_water): self
+    {
+        $this->grey_water = $grey_water;
 
         return $this;
     }
