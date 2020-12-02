@@ -17,6 +17,7 @@ class HomeController extends AbstractController
             'message' => 'Welcome to the virtual water API',
             'all products' => '/products',
             'product by id' => '/products/id',
+            'products by search' => '/products/search/{query}'
         ]);
     }
 }

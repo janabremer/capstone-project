@@ -52,14 +52,14 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/search/{query}", methods={"GET"})
+     * @Route("/products/search/{query}", methods={"GET"})
      */
     public function getBySearch(
         string $query,
         ProductRepository $repository, 
         SerializerInterface $serializer): JsonResponse 
     {
-        $products = $repository->findBy(array('name' => ($query)));
+        $products = $repository->search($query);
         if (sizeof($products) === 0) {
             return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
         }
