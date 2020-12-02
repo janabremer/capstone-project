@@ -19,7 +19,7 @@ export default function useProduct(productId) {
         getProductById(productId)
             .then(data => setProduct({
                 name: data.name, 
-                water: data.virtualWater}))
+                water: data.totalWater}))
             .catch(error => console.log(error))
     }, [productId])
 

@@ -12,7 +12,6 @@ class Product
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -22,14 +21,42 @@ class Product
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="float")
+     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $virtualWater;
+    private $category;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $totalWater;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $greenWater;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $blueWater;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $greyWater;
+
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getName(): ?string
@@ -44,14 +71,62 @@ class Product
         return $this;
     }
 
-    public function getVirtualWater(): ?float
+    public function getCategory(): ?string
     {
-        return $this->virtualWater;
+        return $this->category;
     }
 
-    public function setVirtualWater(float $virtualWater): self
+    public function setCategory(?string $category): self
     {
-        $this->virtualWater = $virtualWater;
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getTotalWater(): ?int
+    {
+        return $this->totalWater;
+    }
+
+    public function setTotalWater(int $total_water): self
+    {
+        $this->totalWater = $total_water;
+
+        return $this;
+    }
+
+    public function getGreenWater(): ?int
+    {
+        return $this->greenWater;
+    }
+
+    public function setGreenWater(?int $green_water): self
+    {
+        $this->greenWater = $green_water;
+
+        return $this;
+    }
+
+    public function getBlueWater(): ?int
+    {
+        return $this->blueWater;
+    }
+
+    public function setBlueWater(?int $blue_water): self
+    {
+        $this->blueWater = $blue_water;
+
+        return $this;
+    }
+
+    public function getGreyWater(): ?int
+    {
+        return $this->greyWater;
+    }
+
+    public function setGreyWater(?int $grey_water): self
+    {
+        $this->greyWater = $grey_water;
 
         return $this;
     }
