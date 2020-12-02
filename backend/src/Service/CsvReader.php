@@ -9,7 +9,8 @@ use App\Entity\Product;
 class CsvReader {
     
     public function __construct(EntityManagerInterface $em) {
-        $this->em = $em;
+        $this->_em = $em;
+
     }
 
     public function useData() {
@@ -29,9 +30,9 @@ class CsvReader {
                     ->setGreyWater(intval($row[5]))
                     ->setTotalWater(intval($row[3]) + intval($row[4]) + intval($row[5]));
             
-                $this->em->persist($product);
+                $this->_em->persist($product);
             }
         }
-            $this->em->flush();
+            $this->_em->flush();
     }
 }

@@ -34,7 +34,7 @@ class CsvImportCommand extends Command
         CsvReader $csvReader)
     {
         parent::__construct();
-        $this->em = $em;
+        $this->_em = $em;
         $this->CsvReader = $csvReader;
     }
 
