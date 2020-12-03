@@ -1,35 +1,45 @@
 import styled from 'styled-components/macro'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import getProductsBySearch from '../services/getProductsBySearch'
 
 export default function SearchPage() {
   
-    const [results, setResults] = useState([])
-
-    function searchProducts(event) {
-        event.preventDefault()
-        const searchTerm = event.target.searchTerm.value;
-        getProductsBySearch(searchTerm)
-            .then(data => setResults(data))
-    }
-
+    const [searchTerm, setSearchTerm] = useState('')
+    const [results, setResults] = useState()
+   
     return(
         <PageStyled>
             <ul>
-                {results.map(product =>
-                    <li key={product.id}>{product.name}</li>
-                )}
+                {results ? results.map(product =>
+                    <li key={product.id}>{product.category}</li>
+                ) : <li>no results</li> }
+                {console.log(results)}
             </ul>
             <form onSubmit={searchProducts}>
                 <input
-                    name="searchTerm" type="search" placeholder="insert a product name..."
+                    name="searchTerm" 
+                    type="search" 
+                    placeholder="insert a product name..."
+                    onChange={handleChange}
+                    value={searchTerm}
                 />
                 <button>Search</button>
             </form>
         </PageStyled>
     )
+    
+    function handleChange(event) {
+        setSearchTerm(event.target.value)
+    }
+
+    function searchProducts(event) {
+        event.preventDefault()
+        getProductsBySearch(searchTerm)
+            .then(data => setResults(data))
+    }
 
 }
+
 
 
 
