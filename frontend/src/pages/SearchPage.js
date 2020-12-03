@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import getProductsBySearch from '../services/getProductsBySearch'
 
 export default function SearchPage() {
@@ -9,13 +9,13 @@ export default function SearchPage() {
    
     return(
         <PageStyled>
-            <ul>
-                {results ? results.map(product =>
-                    <li key={product.id}>{product.category}</li>
-                ) : <li>no results</li> }
-                {console.log(results)}
-            </ul>
-            <form onSubmit={searchProducts}>
+            <ResultsList>
+                {results && results.map(product =>
+                    <div key={product.id}>{product.category}</div>
+                )}
+            </ResultsList>
+            
+            <Search onKeyUp={searchProducts}>
                 <input
                     name="searchTerm" 
                     type="search" 
@@ -24,7 +24,7 @@ export default function SearchPage() {
                     value={searchTerm}
                 />
                 <button>Search</button>
-            </form>
+            </Search>
         </PageStyled>
     )
     
@@ -34,22 +34,24 @@ export default function SearchPage() {
 
     function searchProducts(event) {
         event.preventDefault()
-        getProductsBySearch(searchTerm)
-            .then(data => setResults(data))
+        searchTerm.length >= 2 && getProductsBySearch(searchTerm)
+                                        .then(data => setResults(data))
     }
-
 }
 
 
-
-
 const PageStyled = styled.main`
-
     display: grid;
-    gap: var(--gap-large);
     height: 100vh;
     padding: 40px;
-    place-items: end;
-    flex: 1 0 100%;
-    scroll-snap-align: start;
+    align-items: start;
+`
+
+const ResultsList = styled.section`
+    align-self: start;
+    
+`
+
+const Search = styled.form`
+    align-self: end;
 `
