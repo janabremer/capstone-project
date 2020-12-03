@@ -16,7 +16,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/products", methods={"GET"})
      */
-    public function index(
+    public function getAllProducts(
         ProductRepository $repository, 
         SerializerInterface $serializer): JsonResponse
     {
@@ -28,13 +28,12 @@ class ProductController extends AbstractController
             [],
             true
         );
-
     }
 
     /**
      * @Route("/products/{id}", methods={"GET"})
      */
-    public function getById(
+    public function getProductById(
         int $id, 
         ProductRepository $repository, 
         SerializerInterface $serializer): JsonResponse 
@@ -52,14 +51,31 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/products/search/{query}", methods={"GET"})
+     * @Route("/categories", methods={"GET"})
      */
-    public function getBySearch(
+    public function getAllCategories(
+        ProductRepository $repository, 
+        SerializerInterface $serializer): JsonResponse
+    {
+        $categories = $repository->findAllCategories();
+
+        return new JsonResponse(
+            $serializer->serialize($categories, 'json'),
+            JsonResponse::HTTP_OK,
+            [],
+            true
+        );
+    }
+
+    /**
+     * @Route("/search/name/{query}", methods={"GET"})
+     */
+    public function getByNameSearch(
         string $query,
         ProductRepository $repository, 
         SerializerInterface $serializer): JsonResponse 
     {
-        $products = $repository->search($query);
+        $products = $repository->searchByName($query);
         if (sizeof($products) === 0) {
             return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
         }
@@ -70,4 +86,26 @@ class ProductController extends AbstractController
             true
         );
     }
+
+    /**
+     * @Route("/search/category/{query}", methods={"GET"})
+     */
+    public function getByCategorySearch(
+        string $query,
+        ProductRepository $repository, 
+        SerializerInterface $serializer): JsonResponse 
+    {
+        $categories = $repository->searchByCategory($query);
+        if (sizeof($categories) === 0) {
+            return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
+        }
+        return new JsonResponse(
+            $serializer->serialize($categories, 'json'), 
+            JsonResponse::HTTP_OK, 
+            [], 
+            true
+        );
+    }
+
+
 }

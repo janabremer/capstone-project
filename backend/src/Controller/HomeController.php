@@ -16,8 +16,10 @@ class HomeController extends AbstractController
         return $this->json([
             'message' => 'Welcome to the virtual water API',
             'all products' => '/products',
+            'all categories' => '/categories',
             'product by id' => '/products/id',
-            'products by search' => '/products/search/{query}'
+            'product search by name' => '/search/name/query_term',
+            'product search by category' => '/search/category/query_term'
         ]);
     }
 }
