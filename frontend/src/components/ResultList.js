@@ -16,14 +16,14 @@ export default function ResultList({results, handleClick}) {
 }
 
 const ResultListStyled = styled.section`
-    align-self: start;
+    /* align-self: start; */
     display: grid;
     gap: var(--gap-medium);
-    place-items: center;
-    width: 100%;
+    /* place-items: center; */
+    /* width: 100%; */
     overflow-y: scroll;
-    display: grid;
     align-content: start;
+    padding: 40px;
 
     a {
         text-decoration: none;
@@ -39,6 +39,6 @@ const ResultItem = styled.div`
     color: var(--primary-blue);
     font-weight: 450;
     letter-spacing: .15em;
-    padding: 10px;
+    padding: 10px 20px;
     width: 100%;
 `

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 
-export default function Search({onSearch}) {
+export default function SearchBar({onSearch}) {
     const [searchTerm, setSearchTerm] = useState('')
 
     return(
@@ -28,7 +28,14 @@ export default function Search({onSearch}) {
 }
 
 const SearchStyled = styled.form`
-    align-self: end;
+    /* align-self: end; */
+    /* position: fixed;
+  bottom: 40px;
+  width: 100%;
+  margin: auto; */
+  padding: 20px 40px;
+  
+  
 `
 
 const InputField = styled.input`
@@ -43,6 +50,7 @@ const InputField = styled.input`
     padding: 12px;
     text-align: center;
     width: 100%;
+    height: 50px;
   
     &:focus {
         border-radius: 25px;

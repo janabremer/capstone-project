@@ -7,19 +7,19 @@ import ProductPage from './pages/ProductPage'
 export default function App() {
   
   return (
-        <Switch>
-          <Route path="/gallery">
-            <Gallery />
-          </Route>
-          <Route path="/search">
-            <SearchPage />
-          </Route>
-          <Route path="/product/:id">
-            <ProductPage />
-          </Route>
-          <Route>
-            <NotFoundPage />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path="/gallery">
+              <Gallery />
+            </Route>
+            <Route path="/search">
+              <SearchPage />
+            </Route>
+            <Route path="/product/:id">
+              <ProductPage />
+            </Route>
+            <Route>
+              <NotFoundPage />
+            </Route>
+          </Switch>
   );
 }
