@@ -3,12 +3,13 @@ import { useState } from 'react'
 
 export default function SearchBar({onSearch}) {
     const [searchTerm, setSearchTerm] = useState('')
-
+ 
     return(
         <SearchStyled onKeyUp={handleKeyUp}>
                 <label htmlFor="searchTerm" />
                 <InputField
                     name="searchTerm" 
+                    data-testid="search-input"
                     type="search"
                     placeholder="Search for product"
                     onChange={handleChange}
@@ -28,14 +29,7 @@ export default function SearchBar({onSearch}) {
 }
 
 const SearchStyled = styled.form`
-    /* align-self: end; */
-    /* position: fixed;
-  bottom: 40px;
-  width: 100%;
-  margin: auto; */
-  padding: 20px 40px;
-  
-  
+    padding: 20px 40px;
 `
 
 const InputField = styled.input`
@@ -47,10 +41,10 @@ const InputField = styled.input`
     font-family: 'Oswald', sans-serif;
     font-size: 120%;
     font-weight: inherit;
+    height: 50px;
     padding: 12px;
     text-align: center;
     width: 100%;
-    height: 50px;
   
     &:focus {
         border-radius: 25px;
