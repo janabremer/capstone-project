@@ -24,6 +24,12 @@ const ResultListStyled = styled.section`
     overflow-y: scroll;
     display: grid;
     align-content: start;
+
+    a {
+        text-decoration: none;
+        width: 100%;
+    }
+
 `
 
 const ResultItem = styled.div`
