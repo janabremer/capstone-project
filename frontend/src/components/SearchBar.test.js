@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import user from '@testing-library/user-event'
 import SearchBar from './SearchBar'
 

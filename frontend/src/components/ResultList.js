@@ -2,34 +2,30 @@ import styled from 'styled-components/macro'
 import { Link } from "react-router-dom";
 
 
-export default function ResultList({results, handleClick}) {
+export default function ResultList({results}) {
 
     return(
             <ResultListStyled>
                 {Array.isArray(results) ? results.map(({id, category}) =>
                     <Link to={`/product/${id}`} key={id}>
-                        <ResultItem>{category}</ResultItem>
+                        <ResultItem data-testid="result-item">{category}</ResultItem>
                     </Link>) : 
-                    <ResultItem>Product not found</ResultItem>}
+                    <ResultItem data-testid="not-found">Product not found</ResultItem>}
             </ResultListStyled>
         )
 }
 
 const ResultListStyled = styled.section`
-    /* align-self: start; */
+    align-content: start;
     display: grid;
     gap: var(--gap-medium);
-    /* place-items: center; */
-    /* width: 100%; */
     overflow-y: scroll;
-    align-content: start;
     padding: 40px;
 
     a {
         text-decoration: none;
         width: 100%;
     }
-
 `
 
 const ResultItem = styled.div`
