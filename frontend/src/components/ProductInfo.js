@@ -1,11 +1,17 @@
 import styled from 'styled-components/macro'
 
 export default function ProductInfo ({name, water}) {
+    if (!name) {
+        return(
+            <ProductInfoStyled>
+                <Heading>loading...</Heading>
+            </ProductInfoStyled>
+        )
+    }
     return(
         <ProductInfoStyled>
             <Heading>{name}</Heading>
             <Content>{water} litres (1kg)</Content>
-
         </ProductInfoStyled>
     )
 }

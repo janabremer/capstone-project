@@ -12,6 +12,7 @@ export default createGlobalStyle`
     --gap-medium: 20px;
     --primary-blue: rgb(0, 187, 233);
     --primary-dark: rgb(0, 61, 77);
+    --secondary-dark: rgb(89, 111, 114);
     --primary-light: rgb(245, 249, 250);
     --primary-light-transparent: rgba(245, 249, 250, 0.7);
     --shadow-dark: rgba(0, 61, 77, 0.25);

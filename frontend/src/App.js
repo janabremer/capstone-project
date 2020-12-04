@@ -1,7 +1,8 @@
 import { Route, Switch } from 'react-router-dom'
 import Gallery from './components/Gallery'
 import SearchPage from './pages/SearchPage'
-
+import NotFoundPage from './pages/NotFoundPage'
+import ProductPage from './pages/ProductPage'
 
 export default function App() {
   
@@ -12,6 +13,12 @@ export default function App() {
           </Route>
           <Route path="/search">
             <SearchPage />
+          </Route>
+          <Route path="/product/:id">
+            <ProductPage />
+          </Route>
+          <Route>
+            <NotFoundPage />
           </Route>
         </Switch>
   );

@@ -1,9 +1,13 @@
 import styled from 'styled-components/macro'
 import ProductInfo from '../components/ProductInfo'
 import useProduct from '../hooks/useProduct'
+import { useParams } from "react-router-dom";
+
 
 export default function ProductPage({productId}) {
-    const {product, photo} = useProduct(productId)
+    const { id } = useParams()
+    const {product, photo} = useProduct(productId | id)
+
     return(
         <PageStyled imgUrl={photo.url}>
             <ProductInfo name={product.name} water={product.water}/>

@@ -1,57 +1,46 @@
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 import getProductsBySearch from '../services/getProductsBySearch'
+import ResultList from '../components/ResultList'
+import Search from '../components/Search'
+import backgroundImage from '../assets/background.jpg'
 
 export default function SearchPage() {
   
-    const [searchTerm, setSearchTerm] = useState('')
-    const [results, setResults] = useState()
+    
+    const [results, setResults] = useState([])
    
     return(
         <PageStyled>
-            <ResultsList>
-                {results && results.map(product =>
-                    <div key={product.id}>{product.category}</div>
-                )}
-            </ResultsList>
-            
-            <Search onKeyUp={searchProducts}>
-                <input
-                    name="searchTerm" 
-                    type="search" 
-                    placeholder="insert a product name..."
-                    onChange={handleChange}
-                    value={searchTerm}
-                />
-                <button>Search</button>
-            </Search>
+            <ResultList results={results} />            
+            <Search onSearch={searchProducts} />
         </PageStyled>
     )
-    
-    function handleChange(event) {
-        setSearchTerm(event.target.value)
-    }
 
-    function searchProducts(event) {
-        event.preventDefault()
-        searchTerm.length >= 2 && getProductsBySearch(searchTerm)
-                                        .then(data => setResults(data))
+    function searchProducts(searchTerm) {
+        if (searchTerm.length >= 2) {
+            getProductsBySearch(searchTerm)
+                .then(data => setResults(data))
+                .catch(error => alert(error))
+        } else {
+            setResults([])
+        }
     }
 }
 
 
 const PageStyled = styled.main`
-    display: grid;
-    height: 100vh;
-    padding: 40px;
     align-items: start;
-`
-
-const ResultsList = styled.section`
-    align-self: start;
-    
-`
-
-const Search = styled.form`
-    align-self: end;
+    background-image: url(${backgroundImage});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: grid;
+    padding: 40px;
+    grid-template-rows: auto 48px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 `
