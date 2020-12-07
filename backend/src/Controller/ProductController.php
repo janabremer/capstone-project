@@ -2,32 +2,20 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use App\Controller\BaseController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
-use App\Entity\Product;
 
-class ProductController extends AbstractController
+class ProductController extends BaseController
 {
     /**
      * @Route("/products", methods={"GET"})
      */
-    public function getAllProducts(
-        ProductRepository $repository, 
-        SerializerInterface $serializer): JsonResponse
+    public function getAllProducts(ProductRepository $repository): JsonResponse
     {
         $products = $repository->findAll();
-
-        return new JsonResponse(
-            $serializer->serialize($products, 'json'),
-            JsonResponse::HTTP_OK,
-            [],
-            true
-        );
+        return $this->jsonResponse($products);
     }
 
     /**
@@ -35,36 +23,25 @@ class ProductController extends AbstractController
      */
     public function getProductById(
         int $id, 
-        ProductRepository $repository, 
-        SerializerInterface $serializer): JsonResponse 
+        ProductRepository $repository): JsonResponse 
     {
         $product = $repository->find($id);
+
         if (is_null($product)) {
-            return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
+            return $this->notFoundResponse('product not found');    
         }
-        return new JsonResponse(
-            $serializer->serialize($product, 'json'), 
-            JsonResponse::HTTP_OK, 
-            [], 
-            true
-        );
+        
+        return $this->jsonResponse($product);
     }
 
     /**
      * @Route("/categories", methods={"GET"})
      */
     public function getAllCategories(
-        ProductRepository $repository, 
-        SerializerInterface $serializer): JsonResponse
+        ProductRepository $repository): JsonResponse
     {
         $categories = $repository->findAllCategories();
-
-        return new JsonResponse(
-            $serializer->serialize($categories, 'json'),
-            JsonResponse::HTTP_OK,
-            [],
-            true
-        );
+        return $this->jsonResponse($categories);
     }
 
     /**
@@ -72,19 +49,14 @@ class ProductController extends AbstractController
      */
     public function getByNameSearch(
         string $query,
-        ProductRepository $repository, 
-        SerializerInterface $serializer): JsonResponse 
+        ProductRepository $repository): JsonResponse 
     {
         $products = $repository->searchByName($query);
+
         if (sizeof($products) === 0) {
-            return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
+            return $this->notFoundResponse('no products found');    
         }
-        return new JsonResponse(
-            $serializer->serialize($products, 'json'), 
-            JsonResponse::HTTP_OK, 
-            [], 
-            true
-        );
+        return $this->jsonResponse($products);
     }
 
     /**
@@ -92,20 +64,13 @@ class ProductController extends AbstractController
      */
     public function getByCategorySearch(
         string $query,
-        ProductRepository $repository, 
-        SerializerInterface $serializer): JsonResponse 
+        ProductRepository $repository): JsonResponse
     {
         $categories = $repository->searchByCategory($query);
+
         if (sizeof($categories) === 0) {
-            return new JsonResponse(['success' => false], JsonResponse::HTTP_NOT_FOUND);    
+            return $this->notFoundResponse('no categories found');    
         }
-        return new JsonResponse(
-            $serializer->serialize($categories, 'json'), 
-            JsonResponse::HTTP_OK, 
-            [], 
-            true
-        );
+        return $this->jsonResponse($categories);
     }
-
-
 }
