@@ -5,7 +5,7 @@ export default function SearchBar({onSearch}) {
     const [searchTerm, setSearchTerm] = useState('')
  
     return(
-        <SearchStyled onKeyUp={handleKeyUp}>
+        <SearchStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
                 <label htmlFor="searchTerm" />
                 <InputField
                     name="searchTerm" 
@@ -26,6 +26,10 @@ export default function SearchBar({onSearch}) {
         event.preventDefault()
         onSearch(searchTerm)
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+    }
 }
 
 const SearchStyled = styled.form`
@@ -35,7 +39,8 @@ const SearchStyled = styled.form`
 const InputField = styled.input`
     background-color: var(--primary-light-transparent);
     border-radius: 25px;
-    border: solid 2px var(--secondary-dark);
+    border: none;
+    /* border: solid 2px var(--secondary-dark); */
     box-shadow:  0px 0px 20px var(--shadow-dark);
     color: inherit;
     font-family: 'Oswald', sans-serif;

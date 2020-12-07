@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro'
-import backgroundImage from '../assets/background.jpg'
+import backgroundImage from '../assets/background.png'
 
 
 export default createGlobalStyle`
