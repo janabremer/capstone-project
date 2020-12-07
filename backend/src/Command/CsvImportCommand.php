@@ -66,6 +66,6 @@ class CsvImportCommand extends Command
 
         $io->success('Command exited cleanly');
 
-        return 0;
+        return Command::SUCCESS;
     }
 }
