@@ -11,6 +11,9 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Product|null findOneBy(array $criteria, array $orderBy = null)
  * @method Product[]    findAll()
  * @method Product[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Product[]    findAllCategories()
+ * @method Product[]    searchByName(string $searchTerm)
+ * @method Product[]    searchByCategory(string $searchTerm)
  */
 class ProductRepository extends ServiceEntityRepository
 {
@@ -19,7 +22,7 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    public function findAllCategories()
+    public function findAllCategories(): array
     {
         return $this->createQueryBuilder('product')
             ->andWhere("product.category != ''")
@@ -36,7 +39,7 @@ class ProductRepository extends ServiceEntityRepository
             ->execute();
     }
 
-    public function searchByCategory(string $term)
+    public function searchByCategory(string $term): array
     {
         return $this->createQueryBuilder('product')
             ->andWhere('product.category LIKE :searchTerm')

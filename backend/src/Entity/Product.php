@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -13,36 +14,43 @@ class Product
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
+     * @Assert\Regex("\d+")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=180)
+     * @Assert\Length(max=180)
      */
     private $name;
 
      /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=180, nullable=true)
+     * @Assert\Length(max=180)
      */
     private $category;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Regex("\d+")
      */
     private $totalWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Regex("\d+")
      */
     private $greenWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Regex("\d+")
      */
     private $blueWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Regex("\d+")
      */
     private $greyWater;
 

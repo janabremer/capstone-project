@@ -19,7 +19,11 @@ class ProductController extends BaseController
     }
 
     /**
-     * @Route("/products/{id}", methods={"GET"})
+     * @Route(
+     *      "/products/{id}", 
+     *      methods={"GET"},
+     *      requirements={"id"="\d+"}
+     * )
      */
     public function getProductById(
         int $id, 
@@ -45,7 +49,11 @@ class ProductController extends BaseController
     }
 
     /**
-     * @Route("/search/name/{query}", methods={"GET"})
+     * @Route(
+     *      "/search/name/{query}", 
+     *      methods={"GET"},
+     *      requirements={"query"=".+"}
+     * )
      */
     public function getByNameSearch(
         string $query,
