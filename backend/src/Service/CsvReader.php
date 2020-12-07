@@ -10,14 +10,12 @@ class CsvReader {
     
     public function __construct(EntityManagerInterface $em) {
         $this->_em = $em;
-
     }
 
     public function useData() {
         $csv = Reader::createFromPath('%kernel.root_dir%/../data/crop-products.csv', 'r');
         $csv->setDelimiter(';');
         $records = $csv->getRecords();
-
 
         foreach ($records as $index => $row) {
             if($row[0] != 0) {

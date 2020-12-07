@@ -11,4 +11,6 @@ export default function getPhoto(queryParam) {
 
     return fetch(`https://api.pexels.com/v1/search?per_page=1&query=${queryParam}`, requestOptions)
         .then(res => res.json()) 
-} 
+}
+
+// @TODO: Fetch photos in backend

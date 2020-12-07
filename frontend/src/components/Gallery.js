@@ -11,6 +11,10 @@ export default function Gallery() {
             .catch(error => console.log(error))
     }, [])
 
+    if (!products) {
+        return <div>Products are loading...</div>
+    }
+
     return(
         <GalleryStyled>
             {products.map(product =>
