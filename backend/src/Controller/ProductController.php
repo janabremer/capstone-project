@@ -64,11 +64,16 @@ class ProductController extends BaseController
         if (sizeof($products) === 0) {
             return $this->notFoundResponse('no products found');    
         }
+
         return $this->jsonResponse($products);
     }
 
     /**
-     * @Route("/search/category/{query}", methods={"GET"})
+     * @Route(
+     *      "/search/category/{query}",
+     *      methods={"GET"},
+     *      requirements={"query"=".+"}
+     * )
      */
     public function getByCategorySearch(
         string $query,
@@ -79,6 +84,7 @@ class ProductController extends BaseController
         if (sizeof($categories) === 0) {
             return $this->notFoundResponse('no categories found');    
         }
+        
         return $this->jsonResponse($categories);
     }
 }
