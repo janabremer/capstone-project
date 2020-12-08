@@ -1,19 +1,27 @@
 import styled from 'styled-components/macro'
 
-export default function ProductInfo ({name, water}) {
-    if (!name) {
-        return(
-            <ProductInfoStyled>
-                <Heading>loading...</Heading>
-            </ProductInfoStyled>
-        )
+export default function ProductInfo ({name, water, apiState, errorMessage}) {
+    switch (apiState) {
+        case 'LOADING':
+            return(
+                <ProductInfoStyled>
+                    <Content>loading...</Content>
+                </ProductInfoStyled>
+            )
+        case 'ERROR':
+            return(
+                <ProductInfoStyled>
+                    <Content>{errorMessage}</Content>
+                </ProductInfoStyled>
+            )
+        default:
+            return(
+                <ProductInfoStyled>
+                    <Heading>{name}</Heading>
+                    <Content>{water} litres (1kg)</Content>
+                </ProductInfoStyled>
+            )
     }
-    return(
-        <ProductInfoStyled>
-            <Heading>{name}</Heading>
-            <Content>{water} litres (1kg)</Content>
-        </ProductInfoStyled>
-    )
 }
 
 const ProductInfoStyled = styled.section`

@@ -8,12 +8,12 @@ const onSearchMock = jest.fn()
 
 describe('SearchBar', () => {
 
-    it('Displays the search input field', () => {
+    it('displays the search input field', () => {
         const {getByTestId} = render (<SearchBar onSearch={onSearchMock} />)
         expect(getByTestId('search-input')).toHaveValue('')
     })
 
-    it('Calls onSearchMock the correct number of times and with correct search term', () => {
+    it('calls onSearchMock the correct number of times and with correct search term', () => {
         const {getByTestId} = render (<SearchBar onSearch={onSearchMock} />)
         user.type(getByTestId('search-input'), 'soy')
         expect(getByTestId('search-input')).toHaveValue('soy')
