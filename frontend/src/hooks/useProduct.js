@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import getProductById from '../services/getProductById'
 import getPhoto from '../services/getPhoto'
+import PropTypes from 'prop-types'
 
 export default function useProduct(productId) {
+    useProduct.propTypes = {productId: PropTypes.number}
 
     const apiStates = {
         LOADING: 'LOADING',

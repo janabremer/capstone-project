@@ -1,4 +1,8 @@
+import PropTypes from 'prop-types'
+
 export default function getPhoto(queryParam) {
+    getPhoto.propTypes = {results: PropTypes.string}
+    
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "563492ad6f9170000100000171d02304f5cb4f27af21cfdd6441ef0a");
     myHeaders.append("Cookie", "__cfduid=d7f813d0b0ba48aa2770e52f585f84bb01606308963");

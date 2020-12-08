@@ -3,9 +3,10 @@ import ProductInfo from '../components/ProductInfo'
 import useProduct from '../hooks/useProduct'
 import { useParams } from "react-router-dom";
 import defaultPhoto from '../assets/defaultPhoto.jpg'
-
+import PropTypes from 'prop-types'
  
 export default function ProductPage({productId}) {
+    ProductPage.propTypes = {productId: PropTypes.number}
     const { id } = useParams()
     const { product, photo } = useProduct(productId | id)
     
@@ -24,10 +25,10 @@ const PageStyled = styled.main`
     background-repeat: no-repeat;
     background-size: cover; 
     display: grid;
+    flex: 1 0 100%;
     gap: var(--gap-large);
     height: 100vh;
     padding: 40px;
     place-items: end;
-    flex: 1 0 100%;
     scroll-snap-align: start;
 `

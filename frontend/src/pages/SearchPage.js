@@ -6,8 +6,6 @@ import SearchBar from '../components/SearchBar'
 
 
 export default function SearchPage() {
-  
-    
     const [results, setResults] = useState([])
    
     return(
@@ -30,12 +28,11 @@ export default function SearchPage() {
 
 
 const PageStyled = styled.main`
-    grid-template-rows: auto 90px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     display: grid;
-    
+    grid-template-rows: auto 90px;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;    
 `
