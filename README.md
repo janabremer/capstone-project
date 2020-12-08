@@ -12,7 +12,7 @@ The project uses React and Composer and consists of a backend and a frontend par
 
 Clone the project (or your own fork) with:
 ```
-$ git clone {SHH key}
+$ git clone {SSH key}
 ```
 
 All further details are described separately for frontend and backend:
