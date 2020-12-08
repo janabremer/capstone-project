@@ -16,13 +16,11 @@ export default function SearchPage() {
     )
 
     function searchProducts(searchTerm) {
-        if (searchTerm.length >= 2) {
+        searchTerm.length >= 2 ? (
             getProductsBySearch(searchTerm)
                 .then(data => setResults(data))
                 .catch(error => alert(error))
-        } else {
-            setResults([])
-        }
+         ) : setResults([])
     }
 }
 
