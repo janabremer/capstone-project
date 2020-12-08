@@ -4,22 +4,32 @@ import styled from 'styled-components/macro'
 import useAllProducts from '../hooks/useAllProducts'
 
 export default function Gallery() {
-    const { products } = useAllProducts()
-    switch (products.state) {
+    const { products, apiState } = useAllProducts()
+    switch(apiState) {
         case 'LOADING':
-            return <ProductInfo apiState={products.state} />
+            return (
+                <GalleryStyled>
+                    <ProductInfo apiState={apiState} />
+                </GalleryStyled>
+            )
         case 'ERROR':
-            return <ProductInfo apiState={products.state} errorMessage={products.error} />
+            return (
+                <GalleryStyled>
+                    <ProductInfo apiState={apiState} />
+                </GalleryStyled>
+            )
         default:
             return(
                 <GalleryStyled>
-                    {products.data.map(product =>
+                    {products.map(product =>
                         <ProductPage key={product.id} productId={product.id} />
                     )}
                 </GalleryStyled>
             )
     }
 }
+
+
 
 const GalleryStyled = styled.section`
     display: flex;

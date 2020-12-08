@@ -6,79 +6,56 @@ import PropTypes from 'prop-types'
 export default function useProduct(productId) {
     useProduct.propTypes = {productId: PropTypes.number}
 
-    const apiStates = {
-        LOADING: 'LOADING',
-        SUCCESS: 'SUCCESS',
-        ERROR: 'ERROR'
-    }
-    
+    const [productState, setProductState]= useState('LOADING')
+    const [photoState, setPhotoState]= useState('LOADING')
+
     const [product, setProduct] = useState({
         name: '',
-        water: null,
-        state: apiStates.LOADING,
-        error: ''
+        water: null
     })
 
     const [photo, setPhoto] = useState({
         photographer: '',
         url: '',
-        pexelUrl: '',
-        state: apiStates.LOADING,
-        error: ''
+        pexelUrl: ''
     })
 
     useEffect(() => {
-        setPartialProductData({
-            state: apiStates.LOADING
-        })
+        setProductState('LOADING')
         getProductById(productId)
             .then(data => {
-                setPartialProductData({
+                setProduct({
                     name: data.category, 
                     water: data.totalWater,
-                    state: apiStates.SUCCESS
                 })
-                })
+                setProductState('SUCCESS')
+            })
             .catch((error) => {
-                setPartialProductData({
-                    state: apiStates.ERROR,
-                    error: 'error: server is down'
-                })
+                setProductState('ERROR')
             })
     }, [productId])
 
     useEffect(() => {
-        setPartialPhotoData({
-            state: apiStates.LOADING
-        })
+        setPhotoState('LOADING')
         product.name && getPhoto(product.name)
             .then(data => {
                 const photoData = data.photos[0]
-                setPartialPhotoData({
+                setPhoto({
                     photographer: photoData['photographer'],
                     url: photoData['src'].large,
                     pexelUrl: photoData['url'],
-                    state: apiStates.SUCCESS
                 })
+                setPhotoState('SUCCESS')
             })
             .catch((error) => {
-                setPartialPhotoData({
-                    state: apiStates.ERROR,
-                    error: 'photo fetch failed'
-                })
+                setPhotoState('ERROR')
             })
         }, [product.name])
-
-    function setPartialProductData(partialProductData) {
-        setProduct({ ...product, ...partialProductData });
-    }
-
-    function setPartialPhotoData(partialPhotoData) {
-        setPhoto({ ...photo, ...partialPhotoData });
-    }
     
     return {
         product,
+        productState,
         photo,
+        photoState
     }
 }

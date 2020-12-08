@@ -8,13 +8,13 @@ import PropTypes from 'prop-types'
 export default function ProductPage({productId}) {
     ProductPage.propTypes = {productId: PropTypes.number}
     const { id } = useParams()
-    const { product, photo } = useProduct(productId | id)
+    const { product, photo, productState, photoState } = useProduct(productId | id)
     
-    const imgSrc = photo.state = 'ERROR' ? defaultPhoto : photo.url
+    const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
 
     return(
         <PageStyled imgSrc={imgSrc}>
-            <ProductInfo name={product.name} water={product.water} apiState={product.state} errorMessage={product.error}/>
+            <ProductInfo name={product.name} water={product.water} apiState={productState} />
         </PageStyled>
     )
 }

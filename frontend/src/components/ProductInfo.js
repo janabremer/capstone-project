@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
-export default function ProductInfo ({name, water, apiState, errorMessage}) {
+export default function ProductInfo ({name, water, apiState}) {
     ProductInfo.propTypes = {
         name: PropTypes.string,
         water: PropTypes.number,
-        apiState: PropTypes.string.isRequired,
-        errorMessage: PropTypes.string
+        apiState: PropTypes.string
     }
+    console.log(water)
 
     switch (apiState) {
         case 'LOADING':
@@ -19,7 +19,7 @@ export default function ProductInfo ({name, water, apiState, errorMessage}) {
         case 'ERROR':
             return(
                 <ProductInfoStyled>
-                    <Content>{errorMessage}</Content>
+                    <Content>error: server is down</Content>
                 </ProductInfoStyled>
             )
         default:
