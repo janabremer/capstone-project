@@ -14,7 +14,7 @@ use Pagerfanta\Pagerfanta;
 class ProductController extends BaseController
 {
     /**
-     * @Route("/products", methods={"GET"})
+     * @Route("/products", methods={"GET"}, name="products_collection")
      */
     public function getAllProducts(ProductRepository $repository, Request $request): JsonResponse {
         $page = $request->query->get('page',1);
@@ -31,16 +31,39 @@ class ProductController extends BaseController
             $products[] = $product;
         }
 
+        // $paginatedCollection
+        //     ->products = $products
+        //     ->total = $pagerfanta->getNbResults()
+        // ;
+        
+        // $route = 'products_collection';
+        // $routeParams = array();
+        // $createLinkUrl = function($targetPage) use ($route, $routeParams) {
+        //     return $this->generateUrl($route, array_merge(
+        //         $routeParams,
+        //         array('page' => $targetPage)
+        //     ));
+        // };
+
+        // $paginatedCollection->addLink('self', $createLinkUrl($page));
+        // $paginatedCollection->addLink('first', $createLinkUrl(1));
+        // $paginatedCollection->addLink('last', $createLinkUrl($pagerfanta->getNbPages()));
+
+        // if ($pagerfanta->hasNextPage()) {
+        //     $paginatedCollection->addLink('next', $createLinkUrl($pagerfanta->getNextPage()));
+        // }
+        // if ($pagerfanta->hasPreviousPage()) {
+        //     $paginatedCollection->addLink('prev', $createLinkUrl($pagerfanta->getPreviousPage()));
+        // }
+
+
+        // Works without PaginatedColelction:
+        
         $response = $this->jsonResponse([
             'total' => $pagerfanta->getNbResults(),
             'count' => count($products),
             'products' => $products
         ]);
-
-        // $paginatedCollection
-        //     ->products = $products
-        //     ->total = $pagerfanta->getNbResults()
-        // ;
 
         return $this->jsonResponse($response);
     }
@@ -50,6 +73,18 @@ class ProductController extends BaseController
 
 
 
+
+
+
+
+
+
+
+
+
+
+    // Old Code before paginator
+    //
     // public function getAllProducts(ProductRepository $repository): JsonResponse
     // {
     //     $products = $repository->findAll();
