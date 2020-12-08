@@ -47,4 +47,9 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery()
             ->execute();
     }
+
+    public function findAllQueryBuilder()
+    {
+        return $this->createQueryBuilder('product');
+    }
 }

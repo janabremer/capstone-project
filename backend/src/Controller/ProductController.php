@@ -3,20 +3,60 @@
 namespace App\Controller;
 
 use App\Controller\BaseController;
+// use App\Pagination\PaginatedCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 class ProductController extends BaseController
 {
     /**
      * @Route("/products", methods={"GET"})
      */
-    public function getAllProducts(ProductRepository $repository): JsonResponse
-    {
-        $products = $repository->findAll();
-        return $this->jsonResponse($products);
+    public function getAllProducts(ProductRepository $repository, Request $request): JsonResponse {
+        $page = $request->query->get('page',1);
+
+        $qb = $repository->findAllQueryBuilder();
+
+        $adapter = new DoctrineORMAdapter($qb);
+        $pagerfanta = new Pagerfanta($adapter);
+        $pagerfanta->setMaxPerPage(25);
+        $pagerfanta->setCurrentPage($page);
+
+        $products = array();
+        foreach ($pagerfanta->getCurrentPageResults() as $product) {
+            $products[] = $product;
+        }
+
+        $response = $this->jsonResponse([
+            'total' => $pagerfanta->getNbResults(),
+            'count' => count($products),
+            'products' => $products
+        ]);
+
+        // $paginatedCollection
+        //     ->products = $products
+        //     ->total = $pagerfanta->getNbResults()
+        // ;
+
+        return $this->jsonResponse($response);
     }
+
+
+
+
+
+
+    // public function getAllProducts(ProductRepository $repository): JsonResponse
+    // {
+    //     $products = $repository->findAll();
+    //     return $this->jsonResponse($products);
+    // }
+
+
 
     /**
      * @Route(
