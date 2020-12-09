@@ -14,7 +14,10 @@ class PaginatedCollection
         $this->products = $products;
         $this->total = $total;
         $this->count = count($products);
-        $this-> $links[$href] = $url;
     } 
 
+    public function addLink($ref, $url)
+    {
+        $this->_links[$ref] = $url;
+    }
 }

@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Controller\BaseController;
-// use App\Pagination\PaginatedCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
@@ -30,68 +29,38 @@ class ProductController extends BaseController
         foreach ($pagerfanta->getCurrentPageResults() as $product) {
             $products[] = $product;
         }
+        $total = $pagerfanta->getNbResults();        
+    
+        $route = 'products_collection';
+        $routeParams = array();
+        $createLinkUrl = function($targetPage) use ($route, $routeParams) {
+            return $this->generateUrl($route, array_merge(
+                $routeParams,
+                array('page' => $targetPage)
+            ));
+        };
 
-        // $paginatedCollection
-        //     ->products = $products
-        //     ->total = $pagerfanta->getNbResults()
-        // ;
+        $links = array();
+        $links['self'] = $createLinkUrl($page);
+        $links['first'] = $createLinkUrl(1);
+        $links['last'] = $createLinkUrl($pagerfanta->getNbPages());
         
-        // $route = 'products_collection';
-        // $routeParams = array();
-        // $createLinkUrl = function($targetPage) use ($route, $routeParams) {
-        //     return $this->generateUrl($route, array_merge(
-        //         $routeParams,
-        //         array('page' => $targetPage)
-        //     ));
-        // };
-
-        // $paginatedCollection->addLink('self', $createLinkUrl($page));
-        // $paginatedCollection->addLink('first', $createLinkUrl(1));
-        // $paginatedCollection->addLink('last', $createLinkUrl($pagerfanta->getNbPages()));
-
-        // if ($pagerfanta->hasNextPage()) {
-        //     $paginatedCollection->addLink('next', $createLinkUrl($pagerfanta->getNextPage()));
-        // }
-        // if ($pagerfanta->hasPreviousPage()) {
-        //     $paginatedCollection->addLink('prev', $createLinkUrl($pagerfanta->getPreviousPage()));
-        // }
-
-
-        // Works without PaginatedColelction:
-        
+        if ($pagerfanta->hasNextPage()) {
+            $links['next'] = $createLinkUrl($pagerfanta->getNextPage());
+        }
+        if ($pagerfanta->hasPreviousPage()) {
+            $links['prev'] = $createLinkUrl($pagerfanta->getPreviousPage());
+        }
+    
         $response = $this->jsonResponse([
             'total' => $pagerfanta->getNbResults(),
             'count' => count($products),
-            'products' => $products
+            'products' => $products,
+            'links' => $links
         ]);
-
-        return $this->jsonResponse($response);
+        
+        return $response;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Old Code before paginator
-    //
-    // public function getAllProducts(ProductRepository $repository): JsonResponse
-    // {
-    //     $products = $repository->findAll();
-    //     return $this->jsonResponse($products);
-    // }
-
-
 
     /**
      * @Route(
