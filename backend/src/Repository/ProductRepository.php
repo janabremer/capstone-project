@@ -24,12 +24,10 @@ class ProductRepository extends ServiceEntityRepository
 
     public function findAllCategories(): array
     {
-        $qb = $this->createQueryBuilder('product')
+        return $this->createQueryBuilder('product')
             ->andWhere("product.category != ''")
             ->getQuery()
             ->execute();
-        
-        return $qb;
     }
 
     public function searchByName(string $term): array
