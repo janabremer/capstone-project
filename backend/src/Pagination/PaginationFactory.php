@@ -6,15 +6,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Pagerfanta;
 use Symfony\Component\Routing\RouterInterface;
 use Pagerfanta\Adapter\ArrayAdapter;
+use App\Service\PaginationLinkService;
 
 
 class PaginationFactory
 {
     private $router;
 
-    public function __construct(RouterInterface $router)
+    public function __construct(RouterInterface $router, PaginationLinkService $paginationLinkService)
     {
         $this->router = $router;
+        $this->paginationLinkService = $paginationLinkService;
     }
 
     public function createCollection(array $products, Request $request, string $route, array $routeParams = array())
@@ -26,9 +28,10 @@ class PaginationFactory
         $pagerfanta->setCurrentPage($page);
 
         foreach ($pagerfanta->getCurrentPageResults() as $product) {
-            $products[] = $product;
+            $paginatedProducts[] = $product;
         }
-        $total = $pagerfanta->getNbResults();        
+        $total = $pagerfanta->getNbResults();
+        $links = $this->paginationLinkService->setLinks($page, $pagerfanta->getNbPages(), $route, $routeParams);  
     
         $createLinkUrl = function($targetPage) use ($route, $routeParams) {
             return $this->router->generate($route, array_merge(
@@ -37,9 +40,9 @@ class PaginationFactory
             ));
         };
 
-        $links['self'] = $createLinkUrl($page);
-        $links['first'] = $createLinkUrl(1);
-        $links['last'] = $createLinkUrl($pagerfanta->getNbPages());
+        // $links['self'] = $createLinkUrl($page);
+        // $links['first'] = $createLinkUrl(1);
+        // $links['last'] = $createLinkUrl($pagerfanta->getNbPages());
         
         if ($pagerfanta->hasNextPage()) {
             $links['next'] = $createLinkUrl($pagerfanta->getNextPage());
@@ -50,9 +53,9 @@ class PaginationFactory
     
         $paginatedCollection = [
             'total' => $pagerfanta->getNbResults(),
-            'count' => count($products),
+            'count' => count($paginatedProducts),
             'links' => $links,
-            'products' => $products
+            'products' => $paginatedProducts
         ];
         
         return $paginatedCollection;
