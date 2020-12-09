@@ -24,13 +24,15 @@ class ProductRepository extends ServiceEntityRepository
 
     public function findAllCategories(): array
     {
-        return $this->createQueryBuilder('product')
+        $qb = $this->createQueryBuilder('product')
             ->andWhere("product.category != ''")
             ->getQuery()
             ->execute();
+        
+        return $qb;
     }
 
-    public function searchByName(string $term)
+    public function searchByName(string $term): array
     {
         return $this->createQueryBuilder('product')
             ->andWhere('product.name LIKE :searchTerm')
@@ -46,10 +48,5 @@ class ProductRepository extends ServiceEntityRepository
             ->setParameter('searchTerm', '%'.$term.'%')
             ->getQuery()
             ->execute();
-    }
-
-    public function findAllQueryBuilder()
-    {
-        return $this->createQueryBuilder('product');
     }
 }

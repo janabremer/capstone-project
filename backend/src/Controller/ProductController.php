@@ -7,59 +7,23 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
-use Pagerfanta\Pagerfanta;
+use App\Pagination\PaginationFactory;
 
 class ProductController extends BaseController
 {
     /**
-     * @Route("/products", methods={"GET"}, name="products_collection")
+     * @Route("/products", methods={"GET"}, name="product_collection")
      */
-    public function getAllProducts(ProductRepository $repository, Request $request): JsonResponse {
-        $page = $request->query->get('page',1);
-
-        $qb = $repository->findAllQueryBuilder();
-
-        $adapter = new DoctrineORMAdapter($qb);
-        $pagerfanta = new Pagerfanta($adapter);
-        $pagerfanta->setMaxPerPage(25);
-        $pagerfanta->setCurrentPage($page);
-
-        $products = array();
-        foreach ($pagerfanta->getCurrentPageResults() as $product) {
-            $products[] = $product;
-        }
-        $total = $pagerfanta->getNbResults();        
+    public function getAllProducts(
+        ProductRepository $repository, 
+        Request $request, 
+        PaginationFactory $paginationFactory): JsonResponse {
     
-        $route = 'products_collection';
-        $routeParams = array();
-        $createLinkUrl = function($targetPage) use ($route, $routeParams) {
-            return $this->generateUrl($route, array_merge(
-                $routeParams,
-                array('page' => $targetPage)
-            ));
-        };
-
-        $links = array();
-        $links['self'] = $createLinkUrl($page);
-        $links['first'] = $createLinkUrl(1);
-        $links['last'] = $createLinkUrl($pagerfanta->getNbPages());
+        $products = $repository->findAll();
+        $route = 'product_collection';
+        $paginatedCollection = $paginationFactory->createCollection($products, $request, $route);
         
-        if ($pagerfanta->hasNextPage()) {
-            $links['next'] = $createLinkUrl($pagerfanta->getNextPage());
-        }
-        if ($pagerfanta->hasPreviousPage()) {
-            $links['prev'] = $createLinkUrl($pagerfanta->getPreviousPage());
-        }
-    
-        $response = $this->jsonResponse([
-            'total' => $pagerfanta->getNbResults(),
-            'count' => count($products),
-            'products' => $products,
-            'links' => $links
-        ]);
-        
-        return $response;
+        return $this->jsonResponse($paginatedCollection);
     }
 
     /**
@@ -74,7 +38,6 @@ class ProductController extends BaseController
         ProductRepository $repository): JsonResponse 
     {
         $product = $repository->find($id);
-
         if (is_null($product)) {
             return $this->notFoundResponse('product not found');    
         }
@@ -83,13 +46,19 @@ class ProductController extends BaseController
     }
 
     /**
-     * @Route("/categories", methods={"GET"})
+     * @Route("/categories", methods={"GET"}, name="category_collection")
      */
     public function getAllCategories(
-        ProductRepository $repository): JsonResponse
+        ProductRepository $repository,
+        Request $request, 
+        PaginationFactory $paginationFactory): JsonResponse
     {
         $categories = $repository->findAllCategories();
-        return $this->jsonResponse($categories);
+        $route = 'category_collection';
+        $paginatedCollection = $paginationFactory->createCollection($categories, $request, $route);
+
+
+        return $this->jsonResponse($paginatedCollection);
     }
 
     /**
