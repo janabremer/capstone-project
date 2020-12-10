@@ -6,7 +6,7 @@ use League\Csv\Reader;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Product;
 
-class CsvReader {
+class CsvReaderService {
     
     public function __construct(EntityManagerInterface $em) {
         $this->_em = $em;
