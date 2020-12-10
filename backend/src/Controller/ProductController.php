@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
-use App\Pagination\PaginationFactory;
+use App\Service\PaginationService;
+
 
 class ProductController extends BaseController
 {
@@ -16,13 +17,13 @@ class ProductController extends BaseController
      */
     public function getAllProducts(
         ProductRepository $repository, 
-        Request $request, 
-        PaginationFactory $paginationFactory): JsonResponse {
-    
+        Request $request,
+        PaginationService $paginationService): JsonResponse 
+    {
         $products = $repository->findAll();
         $route = 'product_collection';
-        $paginatedCollection = $paginationFactory->createCollection($products, $request, $route);
-        
+        $paginatedCollection = $paginationService->createCollection($products, $request, $route);
+
         return $this->jsonResponse($paginatedCollection);
     }
 
@@ -51,12 +52,11 @@ class ProductController extends BaseController
     public function getAllCategories(
         ProductRepository $repository,
         Request $request, 
-        PaginationFactory $paginationFactory): JsonResponse
+        PaginationService $paginationService): JsonResponse
     {
         $categories = $repository->findAllCategories();
         $route = 'category_collection';
-        $paginatedCollection = $paginationFactory->createCollection($categories, $request, $route);
-
+        $paginatedCollection = $paginationService->createCollection($categories, $request, $route);
 
         return $this->jsonResponse($paginatedCollection);
     }
