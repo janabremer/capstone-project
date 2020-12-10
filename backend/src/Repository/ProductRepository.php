@@ -22,6 +22,9 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    /**
+     * @return array<string>
+     */
     public function findAllCategories(): array
     {
         return $this->createQueryBuilder('product')
@@ -30,6 +33,9 @@ class ProductRepository extends ServiceEntityRepository
             ->execute();
     }
 
+    /**
+     * @return array<string>
+     */
     public function searchByName(string $term): array
     {
         return $this->createQueryBuilder('product')
@@ -39,6 +45,9 @@ class ProductRepository extends ServiceEntityRepository
             ->execute();
     }
 
+    /**
+     * @return array<string>
+     */
     public function searchByCategory(string $term): array
     {
         return $this->createQueryBuilder('product')

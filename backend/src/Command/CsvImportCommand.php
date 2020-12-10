@@ -19,7 +19,7 @@ class CsvImportCommand extends Command
      * @var EntityManagerInterface
      */
     private $entityManager = null;
-    private $csvReader = null;
+    private CsvReaderService $csvReader;
 
     /**
      * CsvImportCommand constructor.
@@ -42,7 +42,7 @@ class CsvImportCommand extends Command
      * Configure
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:csv:import')
@@ -62,7 +62,7 @@ class CsvImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed...');
 
-        $csvRecords = $this->csvReader->useData();
+        $this->csvReader->useData();
 
         $io->success('Command exited cleanly');
         

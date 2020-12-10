@@ -6,14 +6,17 @@ use Symfony\Component\Routing\RouterInterface;
 
 class PaginationLinkService 
 {
-    private $router;
+    private RouterInterface $router;
 
     public function __construct(RouterInterface $router)
     {
         $this->router = $router;
     }
 
-    public function createLinks(string $route, int $currentPage, object $pager)
+    /**
+     * @return array<string, mixed> $links
+     */
+    public function createLinks(string $route, int $currentPage, object $pager): array
     {
         $createLinkUrl = function($targetPage) use ($route) {
             return $this->router->generate($route, array('page' => $targetPage));

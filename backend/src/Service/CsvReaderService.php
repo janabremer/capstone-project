@@ -7,13 +7,15 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Product;
 
 class CsvReaderService {
-    private $entityManager = null;
+    private EntityManagerInterface $entityManager;
     
-    public function __construct(EntityManagerInterface $entityManager) {
+    public function __construct(EntityManagerInterface $entityManager)
+    {
         $this->entityManager = $entityManager;
     }
 
-    public function useData() {
+    public function useData(): void 
+    {
         $csv = Reader::createFromPath('%kernel.root_dir%/../data/crop-products.csv', 'r');
         $csv->setDelimiter(';');
         $records = $csv->getRecords();
@@ -32,6 +34,6 @@ class CsvReaderService {
                 $this->entityManager->persist($product);
             }
         }
-            $this->entityManager->flush();
+        $this->entityManager->flush();
     }
 }
