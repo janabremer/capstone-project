@@ -7,7 +7,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use App\Service\CsvReader;
+use App\Service\CsvReaderService;
 
 /**
  * Class CsvImportCommand
@@ -25,13 +25,13 @@ class CsvImportCommand extends Command
      * CsvImportCommand constructor.
      *
      * @param EntityManagerInterface $em
-     * @param CsvReader $csvReader
+     * @param CsvReaderService $csvReader
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
     public function __construct(
         EntityManagerInterface $em, 
-        CsvReader $csvReader)
+        CsvReaderService $csvReader)
     {
         parent::__construct();
         $this->_em = $em;

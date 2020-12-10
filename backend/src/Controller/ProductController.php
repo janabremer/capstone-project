@@ -6,16 +6,25 @@ use App\Controller\BaseController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
+use Symfony\Component\HttpFoundation\Request;
+use App\Service\PaginationService;
+
 
 class ProductController extends BaseController
 {
     /**
-     * @Route("/products", methods={"GET"})
+     * @Route("/products", methods={"GET"}, name="product_collection")
      */
-    public function getAllProducts(ProductRepository $repository): JsonResponse
+    public function getAllProducts(
+        ProductRepository $repository, 
+        Request $request,
+        PaginationService $paginationService): JsonResponse 
     {
         $products = $repository->findAll();
-        return $this->jsonResponse($products);
+        $route = 'product_collection';
+        $paginatedCollection = $paginationService->createCollection($products, $request, $route);
+
+        return $this->jsonResponse($paginatedCollection);
     }
 
     /**
@@ -30,7 +39,6 @@ class ProductController extends BaseController
         ProductRepository $repository): JsonResponse 
     {
         $product = $repository->find($id);
-
         if (is_null($product)) {
             return $this->notFoundResponse('product not found');    
         }
@@ -39,13 +47,18 @@ class ProductController extends BaseController
     }
 
     /**
-     * @Route("/categories", methods={"GET"})
+     * @Route("/categories", methods={"GET"}, name="category_collection")
      */
     public function getAllCategories(
-        ProductRepository $repository): JsonResponse
+        ProductRepository $repository,
+        Request $request, 
+        PaginationService $paginationService): JsonResponse
     {
         $categories = $repository->findAllCategories();
-        return $this->jsonResponse($categories);
+        $route = 'category_collection';
+        $paginatedCollection = $paginationService->createCollection($categories, $request, $route);
+
+        return $this->jsonResponse($paginatedCollection);
     }
 
     /**

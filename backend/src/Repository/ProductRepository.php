@@ -30,7 +30,7 @@ class ProductRepository extends ServiceEntityRepository
             ->execute();
     }
 
-    public function searchByName(string $term)
+    public function searchByName(string $term): array
     {
         return $this->createQueryBuilder('product')
             ->andWhere('product.name LIKE :searchTerm')
