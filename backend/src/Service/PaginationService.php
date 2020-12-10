@@ -23,7 +23,8 @@ class PaginationService
         $pager = $this->paginationFactory->create($products);
         $pager->setMaxPerPage(25);
         $pager->setCurrentPage($page);
-
+        
+        $paginatedProducts = array();
         foreach ($pager->getCurrentPageResults() as $product) {
             $paginatedProducts[] = $product;
         }

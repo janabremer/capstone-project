@@ -8,7 +8,8 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class BaseController extends AbstractController 
 {
-
+    private $serializer;
+    
     public function __construct(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;

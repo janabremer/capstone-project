@@ -18,24 +18,24 @@ class CsvImportCommand extends Command
     /**
      * @var EntityManagerInterface
      */
-    private $em;
-    private $csvReader;
+    private $entityManager = null;
+    private $csvReader = null;
 
     /**
      * CsvImportCommand constructor.
      *
-     * @param EntityManagerInterface $em
-     * @param CsvReaderService $csvReader
+     * @param EntityManagerInterface $entityManager
+     * @param CsvReaderService $csvReaderService
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
     public function __construct(
-        EntityManagerInterface $em, 
-        CsvReaderService $csvReader)
+        EntityManagerInterface $entityManager, 
+        CsvReaderService $csvReaderService)
     {
         parent::__construct();
-        $this->_em = $em;
-        $this->CsvReader = $csvReader;
+        $this->entityManager = $entityManager;
+        $this->csvReader = $csvReaderService;
     }
 
     /**
@@ -50,22 +50,22 @@ class CsvImportCommand extends Command
     }
 
     /**
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      *
-     * @return void
+     * @return int
      */
     protected function execute(
         InputInterface $input, 
-        OutputInterface $output)
+        OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed...');
 
-        $csvRecords = $this->CsvReader->useData();
+        $csvRecords = $this->csvReader->useData();
 
         $io->success('Command exited cleanly');
-
+        
         return Command::SUCCESS;
     }
 }
