@@ -12,14 +12,14 @@ const results = [
 
 describe('SearchBar', () => {
 
-    it('Renders ResultItem component for each result', () => {
+    it('renders ResultItem component for each result', () => {
         const {getByText} = render (<MemoryRouter><ResultList results={results}/></MemoryRouter> )
         results.forEach(({category, id}) => {
             expect(getByText(category)).toBeInTheDocument()
         })
     })
 
-    it('Click on each ResultItem navigate to correct ProductPage', () => {
+    it('click on each ResultItem navigate to correct ProductPage', () => {
         const {getByText} = render (<MemoryRouter><ResultList results={results}/></MemoryRouter> )
         
         results.forEach(({category}) => {

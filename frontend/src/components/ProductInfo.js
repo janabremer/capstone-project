@@ -1,19 +1,35 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function ProductInfo ({name, water}) {
-    if (!name) {
-        return(
-            <ProductInfoStyled>
-                <Heading>loading...</Heading>
-            </ProductInfoStyled>
-        )
+export default function ProductInfo ({name, water, apiState}) {
+    ProductInfo.propTypes = {
+        name: PropTypes.string,
+        water: PropTypes.number,
+        apiState: PropTypes.string
     }
-    return(
-        <ProductInfoStyled>
-            <Heading>{name}</Heading>
-            <Content>{water} litres (1kg)</Content>
-        </ProductInfoStyled>
-    )
+    console.log(water)
+
+    switch (apiState) {
+        case 'LOADING':
+            return(
+                <ProductInfoStyled>
+                    <Content>loading...</Content>
+                </ProductInfoStyled>
+            )
+        case 'ERROR':
+            return(
+                <ProductInfoStyled>
+                    <Content>error: server is down</Content>
+                </ProductInfoStyled>
+            )
+        default:
+            return(
+                <ProductInfoStyled>
+                    <Heading>{name}</Heading>
+                    <Content>{water} litres (1kg)</Content>
+                </ProductInfoStyled>
+            )
+    }
 }
 
 const ProductInfoStyled = styled.section`
