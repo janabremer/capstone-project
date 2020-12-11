@@ -11,7 +11,7 @@ export default function ProductPage({productId}) {
     const { product, photo, productState, photoState } = useProduct(productId | id)
     
     const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
-
+    console.log(product)
     return(
         <PageStyled imgSrc={imgSrc}>
             <ProductInfo name={product.name} water={product.water} apiState={productState} />

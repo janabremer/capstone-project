@@ -7,7 +7,7 @@ export default function ProductInfo ({name, water, apiState}) {
         water: PropTypes.number,
         apiState: PropTypes.string
     }
-    console.log(water)
+    console.log(name)
 
     switch (apiState) {
         case 'LOADING':
