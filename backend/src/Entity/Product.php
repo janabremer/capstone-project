@@ -14,7 +14,7 @@ class Product
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
     private int $id;
 
@@ -32,25 +32,25 @@ class Product
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
     private int $totalWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
     private int $greenWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
     private int $blueWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
     private int $greyWater;
 
