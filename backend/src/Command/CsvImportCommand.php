@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Doctrine\ORM\EntityManagerInterface;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,26 +15,19 @@ use App\Service\CsvReaderService;
  */
 class CsvImportCommand extends Command
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager = null;
     private CsvReaderService $csvReader;
 
     /**
      * CsvImportCommand constructor.
-     *
-     * @param EntityManagerInterface $entityManager
+  
      * @param CsvReaderService $csvReaderService
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
     public function __construct(
-        EntityManagerInterface $entityManager, 
         CsvReaderService $csvReaderService)
     {
         parent::__construct();
-        $this->entityManager = $entityManager;
         $this->csvReader = $csvReaderService;
     }
 
