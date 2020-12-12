@@ -1,10 +1,13 @@
 import ProductPage from '../pages/ProductPage'
 import ProductInfo from '../components/ProductInfo'
 import styled from 'styled-components/macro'
-import useAllProducts from '../hooks/useAllProducts'
+import useProductsPerPage from '../hooks/useProductsPerPage'
+// import { useState } from 'react'
 
 export default function Gallery() {
-    const { products, apiState } = useAllProducts()
+    // const [apiPage, setApiPage] = useState(1)
+    const { products, loadNextProductPage, apiState } = useProductsPerPage()
+    
     switch(apiState) {
         case 'LOADING':
             return (
@@ -21,11 +24,16 @@ export default function Gallery() {
         default:
             return(
                 <GalleryStyled>
-                    {products.map(product =>
-                        <ProductPage key={product.id} productId={product.id} />
+                    {products.data.map((product, index) =>
+                        <ProductPage key={product.id} productId={product.id} lastProduct={index+1 === products.count} onLoadMore={handleLoadMore} nextProductPage={products.nextPage} />
                     )}
                 </GalleryStyled>
             )
+    }
+    
+    function handleLoadMore() {
+        // setApiPage(apiPage + 1)
+        loadNextProductPage(products.nextPage)
     }
 }
 

@@ -24,7 +24,6 @@ export default function useProduct(productId) {
         setProductState('LOADING')
         getProductById(productId)
             .then(data => {
-                console.log(data)
                 setProduct({
                     name: data.category, 
                     water: data.totalWater,

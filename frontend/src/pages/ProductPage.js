@@ -4,17 +4,23 @@ import useProduct from '../hooks/useProduct'
 import { useParams } from "react-router-dom";
 import defaultPhoto from '../assets/defaultPhoto.jpg'
 import PropTypes from 'prop-types'
- 
-export default function ProductPage({productId}) {
-    ProductPage.propTypes = {productId: PropTypes.number}
+import Button from '../components/Button'
+
+export default function ProductPage({productId, lastProduct, nextProductPage, onLoadMore}) {
+    ProductPage.propTypes = {
+        productId: PropTypes.number,
+        lastProduct: PropTypes.bool,
+        nextProductPage: PropTypes.bool,
+        onLoadMore: PropTypes.func
+    }
+
     const { id } = useParams()
     const { product, photo, productState, photoState } = useProduct(productId | id)
-    
     const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
-    console.log(product)
     return(
         <PageStyled imgSrc={imgSrc}>
             <ProductInfo name={product.name} water={product.water} apiState={productState} />
+            {lastProduct && nextProductPage && <Button text={'more'} handleClick={onLoadMore} />}
         </PageStyled>
     )
 }
