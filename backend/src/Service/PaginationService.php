@@ -17,10 +17,10 @@ class PaginationService
     }
 
     /**
-     * @param array<string> $products
+     * @param array<string, mixed> $products
      * @return array<string, mixed> $paginatedCollection
      */
-    public function createCollection(array $products, object $request, string $route): array
+    public function createCollection($products, object $request, string $route): array
     {
         $page = $request->query->get('page',1);
         
