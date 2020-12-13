@@ -2,12 +2,12 @@ import ProductPage from '../pages/ProductPage'
 import ProductInfo from '../components/ProductInfo'
 import styled from 'styled-components/macro'
 import useProductsPerPage from '../hooks/useProductsPerPage'
-// import { useState } from 'react'
+import { useRef } from 'react'
 
 export default function Gallery() {
-    // const [apiPage, setApiPage] = useState(1)
-    const { products, loadNextProductPage, apiState } = useProductsPerPage()
-    
+    const { products, updateApiPage, apiState } = useProductsPerPage()
+    const ref = useRef()
+
     switch(apiState) {
         case 'LOADING':
             return (
@@ -24,20 +24,34 @@ export default function Gallery() {
         default:
             return(
                 <GalleryStyled>
-                    {products.data.map((product, index) =>
-                        <ProductPage key={product.id} productId={product.id} lastProduct={index+1 === products.count} onLoadMore={handleLoadMore} nextProductPage={products.nextPage} />
+                    {products.results.map((product, index) =>
+                        <ProductPage 
+                            key={product.id} 
+                            productId={product.id} 
+                            lastProduct={index+1 === products.results.length} 
+                            onLoadNext={handleLoadNext} 
+                            nextProductPage={!!products.nextPage} 
+                            firstProduct={index === 0} 
+                            onLoadPrev={handleLoadPrev} 
+                            prevProductPage={!!products.prevPage}
+                        />
                     )}
+                    <div ref={ref}></div>
                 </GalleryStyled>
             )
     }
     
-    function handleLoadMore() {
-        // setApiPage(apiPage + 1)
-        loadNextProductPage(products.nextPage)
+    function handleLoadNext(event) {
+        event.preventDefault()
+        updateApiPage(products.nextPage)
+        ref.current.scrollIntoView()
+    }
+
+    function handleLoadPrev(event) {
+        event.preventDefault()
+        updateApiPage(products.prevPage)
     }
 }
-
-
 
 const GalleryStyled = styled.section`
     display: flex;

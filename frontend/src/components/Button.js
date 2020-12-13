@@ -1,14 +1,14 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
-export default function ProductInfo ({handleClick, text}) {
+export default function ProductInfo ({onClick, text}) {
     ProductInfo.propTypes = {
         onClick: PropTypes.func,
-        text: PropTypes.string,
+        text: PropTypes.string.isRequired,
     }
 
     return(
-        <Button onClick={handleClick}>{text}</Button>
+        <Button onClick={onClick}>{text}</Button>
     )
 }
 
