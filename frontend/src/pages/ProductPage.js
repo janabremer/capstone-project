@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import ProductInfo from '../components/ProductInfo'
 import useProduct from '../hooks/useProduct'
 import { useParams } from "react-router-dom";
-import defaultPhoto from '../assets/defaultPhoto.jpg'
+import defaultPhoto from '../assets/backgroundPhoto.jpg'
 import PropTypes from 'prop-types'
 import Button from '../components/Button'
 import PageStyled from '../styles/PageStyled'
