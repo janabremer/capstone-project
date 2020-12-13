@@ -44,7 +44,6 @@ export default function Gallery() {
     function handleLoadNext(event) {
         event.preventDefault()
         updateApiPage(products.nextPage)
-        ref.current.scrollIntoView()
     }
 
     function handleLoadPrev(event) {
