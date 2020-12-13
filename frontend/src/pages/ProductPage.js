@@ -20,6 +20,7 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
     const { id } = useParams()
     const { product, photo, productState, photoState } = useProduct(productId | id)
     const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
+
     return(
         <PageStyled imgSrc={imgSrc}>
             <ProductInfo name={product.name} water={product.water} apiState={productState} />
