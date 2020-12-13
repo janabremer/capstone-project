@@ -33,11 +33,9 @@ export default function ProductInfo ({name, water, apiState}) {
 
 const ProductInfoStyled = styled.section`
     background-color: var(--primary-light-transparent);
-    border-radius: 25px;
-    box-shadow:  0px 0px 20px var(--shadow-dark);
     display: grid;
-    gap: var(--gap-medium);
-    padding: 25px;
+    gap: var(--gap-small);
+    padding: 15px;
     place-items: center;
     width: 100%;
 `

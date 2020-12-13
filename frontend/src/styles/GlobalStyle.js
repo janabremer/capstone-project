@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components/macro'
-import backgroundImage from '../assets/background.png'
 
 
 export default createGlobalStyle`
@@ -27,10 +26,5 @@ body {
     font-size: 112.5%;
     height: 100vh;
     max-width: 600px;
-
-    background-image: url(${backgroundImage});
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed;
 }
 `
