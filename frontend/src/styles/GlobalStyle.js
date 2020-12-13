@@ -9,6 +9,7 @@ export default createGlobalStyle`
 }
 
 :root {
+    --gap-extra-large: 60px;
     --gap-large: 40px;
     --gap-medium: 20px;
     --primary-blue: rgb(0, 187, 233);
