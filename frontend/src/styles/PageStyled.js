@@ -4,9 +4,9 @@ const PageStyled = styled.main`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     display: grid;
     height: 100vh;
-    padding: 40px 0 50px 0px;
 `
 
 export default PageStyled

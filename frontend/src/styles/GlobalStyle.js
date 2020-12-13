@@ -22,7 +22,7 @@ export default createGlobalStyle`
 
 body {
     color: var(--primary-dark);
-    font-family: Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 112.5%;
     height: 100vh;
     max-width: 600px;
