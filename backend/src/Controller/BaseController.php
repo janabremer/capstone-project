@@ -8,14 +8,15 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class BaseController extends AbstractController 
 {
-
+    private SerializerInterface $serializer;
+    
     public function __construct(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
     }
 
     /**
-     * @param array|object $data
+     * @param array<string>|object $data
      * 
      * @return JsonResponse
      */

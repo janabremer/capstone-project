@@ -7,8 +7,8 @@ use App\Service\PaginationLinkService;
 
 class PaginationService 
 {
-    private $paginationLinkService;
-    private $paginationFactory;
+    private PaginationLinkService $paginationLinkService;
+    private PaginationFactory $paginationFactory;
 
     public function __construct(PaginationLinkService $paginationLinkService, PaginationFactory $paginationFactory)
     {
@@ -16,14 +16,19 @@ class PaginationService
         $this->paginationFactory = $paginationFactory;
     }
 
-    public function createCollection(array $products, object $request, string $route)
+    /**
+     * @param array<string, mixed> $products
+     * @return array<string, mixed> $paginatedCollection
+     */
+    public function createCollection($products, object $request, string $route): array
     {
         $page = $request->query->get('page',1);
         
         $pager = $this->paginationFactory->create($products);
         $pager->setMaxPerPage(25);
         $pager->setCurrentPage($page);
-
+        
+        $paginatedProducts = array();
         foreach ($pager->getCurrentPageResults() as $product) {
             $paginatedProducts[] = $product;
         }

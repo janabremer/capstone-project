@@ -12,6 +12,7 @@ use App\Service\PaginationService;
 
 class ProductController extends BaseController
 {
+
     /**
      * @Route("/products", methods={"GET"}, name="product_collection")
      */

@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Doctrine\ORM\EntityManagerInterface;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,34 +15,27 @@ use App\Service\CsvReaderService;
  */
 class CsvImportCommand extends Command
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    private $em;
-    private $csvReader;
+    private CsvReaderService $csvReader;
 
     /**
      * CsvImportCommand constructor.
-     *
-     * @param EntityManagerInterface $em
-     * @param CsvReaderService $csvReader
+  
+     * @param CsvReaderService $csvReaderService
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
     public function __construct(
-        EntityManagerInterface $em, 
-        CsvReaderService $csvReader)
+        CsvReaderService $csvReaderService)
     {
         parent::__construct();
-        $this->_em = $em;
-        $this->CsvReader = $csvReader;
+        $this->csvReader = $csvReaderService;
     }
 
     /**
      * Configure
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:csv:import')
@@ -50,22 +43,22 @@ class CsvImportCommand extends Command
     }
 
     /**
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      *
-     * @return void
+     * @return int
      */
     protected function execute(
         InputInterface $input, 
-        OutputInterface $output)
+        OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed...');
 
-        $csvRecords = $this->CsvReader->useData();
+        $this->csvReader->useData();
 
         $io->success('Command exited cleanly');
-
+        
         return Command::SUCCESS;
     }
 }

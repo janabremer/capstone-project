@@ -14,45 +14,45 @@ class Product
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=180)
      * @Assert\Length(max=180)
      */
-    private $name;
+    private string $name;
 
      /**
      * @ORM\Column(type="string", length=180, nullable=true)
      * @Assert\Length(max=180)
      */
-    private $category;
+    private string $category;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
-    private $totalWater;
+    private int $totalWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
-    private $greenWater;
+    private int $greenWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
-    private $blueWater;
+    private int $blueWater;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Regex("\d+")
+     * @Assert\Type(type="integer")
      */
-    private $greyWater;
+    private int $greyWater;
 
 
     public function getId(): ?int
@@ -60,7 +60,7 @@ class Product
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function setId(int $id): self
     {
         $this->id = $id;
 
