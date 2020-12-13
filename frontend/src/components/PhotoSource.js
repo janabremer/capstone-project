@@ -5,9 +5,15 @@ PhotoSource.propTypes = {
     protographer: PropTypes.string.isRequired,
     plattform: PropTypes.string,
     link: PropTypes.string
+} 
+
+const defaultPhoto = {
+    photographer: 'Jong Marshes', 
+    plattform: 'Unsplash', 
+    url: 'https://unsplash.com/photos/79mNMAvSORg'
 }
 
-export default function PhotoSource ({photographer, plattform, url}) {
+export default function PhotoSource ({photographer=defaultPhoto.photographer, plattform=defaultPhoto.plattform, url=defaultPhoto.url}) {
     return(
     <PhotoSourceStyled href={url} target="_blank">Photo by {photographer} on {plattform}</PhotoSourceStyled>
     )

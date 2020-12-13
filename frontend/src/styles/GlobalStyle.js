@@ -17,7 +17,7 @@ export default createGlobalStyle`
     --primary-dark: rgb(0, 61, 77);
     --secondary-dark: rgb(76, 94, 97);
     --primary-light: rgb(245, 249, 250);
-    --primary-light-transparent: rgba(245, 249, 250, 0.7);
+    --primary-light-transparent: rgba(245, 249, 250, 0.8);
     --shadow-dark: rgba(0, 61, 77, 0.25);
     --shadow-light: rgba(245, 249, 250, 0.25);
 }

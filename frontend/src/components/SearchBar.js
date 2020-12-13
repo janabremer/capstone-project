@@ -1,17 +1,22 @@
 import styled from 'styled-components/macro'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+SearchBar.propTypes = {onSearch: PropTypes.func}
+
 export default function SearchBar({onSearch}) {
-    SearchBar.propTypes = {onSearch: PropTypes.func}
-    
     const [searchTerm, setSearchTerm] = useState('')
+    const searchField = useRef(null)
+    useEffect(()=>{
+        searchField.current.focus()
+    },[])
  
     return(
         <SearchBarStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
                 <label htmlFor="searchTerm" />
                 <InputFieldStyled
                     name="searchTerm" 
+                    ref={searchField}
                     data-testid="search-input"
                     type="search"
                     placeholder="search a product..."

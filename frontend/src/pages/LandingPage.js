@@ -21,7 +21,7 @@ export default function LandingPage() {
                 Discover the app and find out about the water in your food!
             </Content>
 
-            <PhotoSource photographer={'Jong Marshes'} plattform={'Unsplash'} url={'https://unsplash.com/photos/79mNMAvSORg'}/>
+            <PhotoSource />
         </LandingPageStyled>
 
     )

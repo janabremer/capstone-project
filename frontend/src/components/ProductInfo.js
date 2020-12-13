@@ -25,7 +25,7 @@ export default function ProductInfo ({name, water, apiState}) {
             return(
                 <ProductInfoStyled>
                     <Heading>{name}</Heading>
-                    <Content>{water} litres (1kg)</Content>
+                    <Content>{water} litres / kg</Content>
                 </ProductInfoStyled>
             )
     }

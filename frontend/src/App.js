@@ -9,28 +9,28 @@ import Navigation from './components/Navigation'
 
 export default function App() {
   
-  return (
-      <AppStyled>
-          <Switch>
-              <Route exact path="/">
-                  <LandingPage />
-              </Route>
-              <Route path="/gallery">
-                <Gallery />
-              </Route>
-              <Route path="/search">
-                  <SearchPage />
-              </Route>
-              <Route path="/product/:id">
-                  <ProductPage />
-              </Route>
-              <Route>
-                  <NotFoundPage />
-              </Route>
-          </Switch>
-          <Navigation />
-      </AppStyled>
-  );
+    return (
+        <AppStyled>
+            <Switch>
+                <Route exact path="/">
+                    <LandingPage />
+                </Route>
+                <Route path="/gallery">
+                    <Gallery />
+                </Route>
+                <Route path="/search">
+                    <SearchPage />
+                </Route>
+                <Route path="/product/:id">
+                    <ProductPage />
+                </Route>
+                <Route>
+                    <NotFoundPage />
+                </Route>
+            </Switch>
+            <Navigation />
+        </AppStyled>
+    )
 }
 
 const AppStyled = styled.div`

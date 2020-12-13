@@ -6,6 +6,8 @@ import defaultPhoto from '../assets/backgroundPhoto.jpg'
 import PropTypes from 'prop-types'
 import Button from '../components/Button'
 import PageStyled from '../styles/PageStyled'
+import PhotoSource from '../components/PhotoSource'
+import {ArrowRightIcon, ArrowLeftIcon} from '../components/Icons'
 
 ProductPage.propTypes = {
     productId: PropTypes.number,
@@ -26,8 +28,9 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
     return(
         <ProductPageStyled imgSrc={imgSrc}>
             <ProductInfo name={product.name} water={product.water} apiState={productState} />
-            {lastProduct && nextProductPage && <Button text={'next'} onClick={onLoadNext} />}
-            {firstProduct && prevProductPage && <Button text={'previous'} onClick={onLoadPrev} />}
+            {lastProduct && nextProductPage && <Button text={'next'} onClick={onLoadNext} iconComponentRight={<ArrowRightIcon />} />}
+            {firstProduct && prevProductPage && <Button text={'previous'} onClick={onLoadPrev} iconComponentLeft={<ArrowLeftIcon />} />}
+            {photoState === 'ERROR' ? <PhotoSource /> : <PhotoSource photographer={photo.photographer} plattform={photo.plattform} url={photo.pexelsUrl} />}
         </ProductPageStyled>
     )
 }
@@ -37,6 +40,7 @@ const ProductPageStyled = styled(PageStyled)`
     background-position: center;
     flex: 1 0 100%;
     gap: var(--gap-large);
-    place-items: start;
+    align-items: start;
+    justify-items: center;
     scroll-snap-align: start;
 `
