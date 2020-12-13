@@ -6,16 +6,17 @@ import defaultPhoto from '../assets/defaultPhoto.jpg'
 import PropTypes from 'prop-types'
 import Button from '../components/Button'
 
+ProductPage.propTypes = {
+    productId: PropTypes.number,
+    lastProduct: PropTypes.bool,
+    nextProductPage: PropTypes.bool,
+    onLoadMore: PropTypes.func,
+    firstProduct: PropTypes.bool, 
+    prevProductPage: PropTypes.bool, 
+    onLoadPrev: PropTypes.func
+}
+
 export default function ProductPage({productId, lastProduct, nextProductPage, onLoadNext, firstProduct, prevProductPage, onLoadPrev}) {
-    ProductPage.propTypes = {
-        productId: PropTypes.number,
-        lastProduct: PropTypes.bool,
-        nextProductPage: PropTypes.bool,
-        onLoadMore: PropTypes.func,
-        firstProduct: PropTypes.bool, 
-        prevProductPage: PropTypes.bool, 
-        onLoadPrev: PropTypes.func
-    }
 
     const { id } = useParams()
     const { product, photo, productState, photoState } = useProduct(productId | id)

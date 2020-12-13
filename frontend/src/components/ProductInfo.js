@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
-export default function ProductInfo ({name, water, apiState}) {
-    ProductInfo.propTypes = {
-        name: PropTypes.string,
-        water: PropTypes.number,
-        apiState: PropTypes.string
-    }
+ProductInfo.propTypes = {
+    name: PropTypes.string,
+    water: PropTypes.number,
+    apiState: PropTypes.string
+}
 
+export default function ProductInfo ({name, water, apiState}) {
     switch (apiState) {
         case 'LOADING':
             return(
