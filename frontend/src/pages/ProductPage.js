@@ -34,6 +34,7 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
 
 const ProductPageStyled = styled(PageStyled)`
     background-image: url(${props => props.imgSrc});
+    background-position: center;
     flex: 1 0 100%;
     gap: var(--gap-large);
     place-items: start;

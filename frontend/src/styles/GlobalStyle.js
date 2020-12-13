@@ -25,6 +25,7 @@ body {
     color: var(--primary-dark);
     font-family: 'Montserrat', sans-serif;
     font-size: 112.5%;
+    letter-spacing: .03em;
     height: 100vh;
     max-width: 600px;
 }

@@ -34,6 +34,7 @@ const NavigationStyled = styled.footer`
     justify-content: space-evenly;
     width: 100%;
     padding: 0 20px;
+    box-shadow:  0 0 20px var(--shadow-dark);
 
     .nav-icon {
         width: 28px;

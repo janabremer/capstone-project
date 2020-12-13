@@ -8,17 +8,17 @@ export default function SearchBar({onSearch}) {
     const [searchTerm, setSearchTerm] = useState('')
  
     return(
-        <SearchStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
+        <SearchBarStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
                 <label htmlFor="searchTerm" />
-                <InputField
+                <InputFieldStyled
                     name="searchTerm" 
                     data-testid="search-input"
                     type="search"
-                    placeholder="Search for product"
+                    placeholder="search a product..."
                     onChange={handleChange}
                     value={searchTerm}
                 />
-        </SearchStyled>
+        </SearchBarStyled>
     )
     
     function handleChange(event) {
@@ -34,29 +34,29 @@ export default function SearchBar({onSearch}) {
         event.preventDefault()
     }
 }
-
-const SearchStyled = styled.form`
-    padding: 20px 40px;
+const SearchBarStyled = styled.form`
+    height: 50px;
 `
 
-const InputField = styled.input`
+const InputFieldStyled = styled.input`
     background-color: var(--primary-light-transparent);
-    border-radius: 25px;
     border: none;
-    /* border: solid 2px var(--secondary-dark); */
-    box-shadow:  0px 0px 20px var(--shadow-dark);
+    box-shadow:  0 0 20px var(--shadow-dark);
     color: inherit;
-    font-family: 'Oswald', sans-serif;
-    font-size: 120%;
+    font-family: inherit;
+    font-size: inherit;
     font-weight: inherit;
-    height: 50px;
-    padding: 12px;
-    text-align: center;
+    padding: 0 30px;
+    text-align: start;
     width: 100%;
+    caret-color: var(--primary-blue);
+    top: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    height: 50px;
   
     &:focus {
-        border-radius: 25px;
-        border: solid 2px var(--primary-blue);
         outline: none;
     }
   `

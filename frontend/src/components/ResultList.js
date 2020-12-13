@@ -17,25 +17,19 @@ export default function ResultList({results}) {
 }
 
 const ResultListStyled = styled.section`
-    align-content: start;
     display: grid;
-    gap: var(--gap-medium);
-    overflow-y: scroll;
-    padding: 40px;
 
     a {
         text-decoration: none;
         width: 100%;
+        color: inherit;
     }
 `
 
 const ResultItem = styled.div`
-    background-color: var(--primary-light-transparent);
-    border-radius: 15px;
-    box-shadow:  0px 0px 20px var(--shadow-dark);
-    color: var(--primary-blue);
-    font-weight: 450;
-    letter-spacing: .15em;
-    padding: 10px 20px;
+    letter-spacing: .2em;
+    padding: 20px 30px;
+    border-bottom: solid 1px var(--shadow-dark);
     width: 100%;
+    text-transform: lowercase;
 `

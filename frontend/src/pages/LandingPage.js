@@ -31,7 +31,6 @@ const LandingPageStyled = styled(PageStyled)`
     background-image: url(${props => props.imgSrc});
     background-position: left;
     padding: 50px;
-    padding-bottom: 60px;
     gap: var(--gap-large);
 `
 

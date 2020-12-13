@@ -6,6 +6,8 @@ const PageStyled = styled.main`
     background-size: cover;
     background-attachment: fixed;
     display: grid;
+    min-height: 100vh;
+    padding-bottom: 50px;
 `
 
 export default PageStyled

@@ -3,16 +3,17 @@ import { useState } from 'react'
 import getProductsBySearch from '../services/getProductsBySearch'
 import ResultList from '../components/ResultList'
 import SearchBar from '../components/SearchBar'
+import PageStyled from '../styles/PageStyled'
 
 
 export default function SearchPage() {
     const [results, setResults] = useState([])
    
     return(
-        <PageStyled>
-            <ResultList results={results} />            
+        <SearchPageStyled>       
             <SearchBar onSearch={searchProducts} />
-        </PageStyled>
+            <ResultList results={results} />     
+        </SearchPageStyled>
     )
 
     function searchProducts(searchTerm) {
@@ -25,12 +26,7 @@ export default function SearchPage() {
 }
 
 
-const PageStyled = styled.main`
-    display: grid;
-    grid-template-rows: auto 90px;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;    
+const SearchPageStyled = styled(PageStyled)`
+    background-color: var(--primary-light);
+    align-content: start;
 `
