@@ -11,18 +11,18 @@ exports[`ProductInfo renders correctly 1`] = `
 }
 
 .c1 {
-  text-transform: uppercase;
   font-size: 170%;
+  font-weight: 700;
   -webkit-letter-spacing: 0.25rem;
   -moz-letter-spacing: 0.25rem;
   -ms-letter-spacing: 0.25rem;
   letter-spacing: 0.25rem;
-  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .c2 {
-  font-size: 120%;
   color: var(--secondary-dark);
+  font-size: 120%;
 }
 
 <section

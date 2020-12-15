@@ -1,16 +1,15 @@
-import styled from 'styled-components/macro'
 import { Route, Switch } from 'react-router-dom'
 import Gallery from './components/Gallery'
-import SearchPage from './pages/SearchPage'
+import Navigation from './components/Navigation'
+import LandingPage from './pages/LandingPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductPage from './pages/ProductPage'
-import LandingPage from './pages/LandingPage'
-import Navigation from './components/Navigation'
+import SearchPage from './pages/SearchPage'
 
 export default function App() {
   
     return (
-        <AppStyled>
+        <>
             <Switch>
                 <Route exact path="/">
                     <LandingPage />
@@ -29,16 +28,6 @@ export default function App() {
                 </Route>
             </Switch>
             <Navigation />
-        </AppStyled>
+        </>
     )
 }
-
-const AppStyled = styled.div`
-    /* display: grid;
-    grid-template-rows: auto 57px;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;     */
-`

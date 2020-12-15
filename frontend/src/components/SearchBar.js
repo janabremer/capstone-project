@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
-import { useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components/macro'
 
 SearchBar.propTypes = {onSearch: PropTypes.func}
 
@@ -47,19 +47,19 @@ const InputFieldStyled = styled.input`
     background-color: var(--primary-light-transparent);
     border: none;
     box-shadow:  0 0 20px var(--shadow-dark);
+    caret-color: var(--primary-blue);
     color: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
-    padding: 0 30px;
-    text-align: start;
-    width: 100%;
-    caret-color: var(--primary-blue);
-    top: 0;
+    height: 50px;
     left: 0;
+    padding: 0 30px;
     position: fixed;
     right: 0;
-    height: 50px;
+    text-align: start;
+    top: 0;
+    width: 100%;
   
     &:focus {
         outline: none;

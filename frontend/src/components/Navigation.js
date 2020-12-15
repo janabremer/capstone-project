@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
-import { HomeIcon, GalleryIcon, SearchIcon, InfoIcon } from './Icons'
+import styled from 'styled-components/macro'
+import { GalleryIcon, HomeIcon, InfoIcon, SearchIcon } from './Icons'
 
 export default function Navigation() {
     return (
@@ -24,22 +24,22 @@ export default function Navigation() {
 const NavigationStyled = styled.footer`
     background-color: var(--primary-light-transparent);
     bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    height: 50px;
+    box-shadow:  0 0 20px var(--shadow-dark);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    place-items: center;
+    height: 50px;
     justify-content: space-evenly;
-    width: 100%;
+    left: 0;
     padding: 0 20px;
-    box-shadow:  0 0 20px var(--shadow-dark);
+    place-items: center;
+    position: fixed;
+    right: 0;
+    width: 100%;
 
     .nav-icon {
-        width: 28px;
         height: 28px; 
         stroke-width: 1.8;
+        width: 28px;
     }
 
 `

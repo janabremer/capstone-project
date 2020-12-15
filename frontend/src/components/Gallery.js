@@ -1,7 +1,7 @@
-import ProductPage from '../pages/ProductPage'
-import ProductInfo from '../components/ProductInfo'
 import styled from 'styled-components/macro'
+import ProductInfo from '../components/ProductInfo'
 import useProductsPerPage from '../hooks/useProductsPerPage'
+import ProductPage from '../pages/ProductPage'
 
 export default function Gallery() {
     const { products, updateApiPage, requestStatus } = useProductsPerPage()

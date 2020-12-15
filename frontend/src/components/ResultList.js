@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
+import styled from 'styled-components/macro';
 
 export default function ResultList({results}) {
     ResultList.propTypes = {results: PropTypes.array}
@@ -20,16 +20,16 @@ const ResultListStyled = styled.section`
     display: grid;
 
     a {
+        color: inherit;
         text-decoration: none;
         width: 100%;
-        color: inherit;
     }
 `
 
 const ResultItem = styled.div`
+    border-bottom: solid 1px var(--shadow-dark);
     letter-spacing: .2em;
     padding: 20px 30px;
-    border-bottom: solid 1px var(--shadow-dark);
-    width: 100%;
     text-transform: lowercase;
+    width: 100%;
 `

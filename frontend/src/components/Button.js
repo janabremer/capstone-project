@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 Button.propTypes = {
     onClick: PropTypes.func,
@@ -17,12 +17,12 @@ export default function Button({onClick, text, iconComponentLeft, iconComponentR
 }
 
 const ButtonStyled = styled.button`
-    font-size: inherit;
-    color: var(--primary-blue);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
     background-color: var(--primary-light-transparent);
+    border-radius: 10px;
+    border: none;
+    color: var(--primary-blue);
     display: flex;
+    font-size: inherit;
+    padding: 10px 20px;
     place-items: center;
 `

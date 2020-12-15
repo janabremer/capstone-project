@@ -1,13 +1,13 @@
-import styled from 'styled-components/macro'
-import ProductInfo from '../components/ProductInfo'
-import useProduct from '../hooks/useProduct'
+import PropTypes from 'prop-types';
 import { useParams } from "react-router-dom";
-import defaultPhoto from '../assets/backgroundPhoto.jpg'
-import PropTypes from 'prop-types'
-import Button from '../components/Button'
-import PageStyled from '../styles/PageStyled'
-import PhotoSource from '../components/PhotoSource'
-import {ArrowRightIcon, ArrowLeftIcon} from '../components/Icons'
+import styled from 'styled-components/macro';
+import defaultPhoto from '../assets/backgroundPhoto.jpg';
+import Button from '../components/Button';
+import { ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
+import PhotoSource from '../components/PhotoSource';
+import ProductInfo from '../components/ProductInfo';
+import useProduct from '../hooks/useProduct';
+import PageStyled from '../styles/PageStyled';
 
 ProductPage.propTypes = {
     productId: PropTypes.number,
@@ -38,11 +38,11 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
 }
 
 const ProductPageStyled = styled(PageStyled)`
+    align-items: start;
     background-image: url(${props => props.imgSrc});
     background-position: center;
     flex: 1 0 100%;
     gap: var(--gap-large);
-    align-items: start;
     justify-items: center;
     scroll-snap-align: start;
 `

@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro'
-import PageStyled from '../styles/PageStyled'
 import backgroundPhoto from '../assets/backgroundPhoto.jpg'
-import PhotoSource from '../components/PhotoSource'
 import { ReactComponent as Logo } from '../assets/logo.svg'
+import PhotoSource from '../components/PhotoSource'
+import PageStyled from '../styles/PageStyled'
 
 export default function LandingPage() {
     return (
@@ -38,15 +38,15 @@ const Heading = styled.section`
     color: var(--primary-light-transparent);
     margin-bottom: var(--gap-extra-large);
     h1 {
-        text-transform: uppercase;
         font-size: 350%;
-        letter-spacing: 0.4rem;
         font-weight: 800;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
     }
     h2 {
         font-size: 250%;
-        letter-spacing: 0.2rem;
         font-weight: 400;  
+        letter-spacing: 0.2rem;
     }
 `
 
@@ -55,7 +55,7 @@ const Content = styled.p`
 `
 
 const LogoStyled = styled(Logo)`
+    color: var(--primary-light-transparent);
     height: 120px;
     justify-self: center;
-    color: var(--primary-light-transparent);
 `

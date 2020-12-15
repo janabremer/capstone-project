@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 PhotoSource.propTypes = {
     protographer: PropTypes.string.isRequired,
@@ -20,9 +20,9 @@ export default function PhotoSource ({photographer=defaultPhoto.photographer, pl
 }
 
 const PhotoSourceStyled = styled.a`
-    text-decoration: none;
     color: var(--primary-light-transparent);
-    place-self: end;
     font-size: 50%;
     padding: 0 10px 10px 0;
+    place-self: end;
+    text-decoration: none;
 `

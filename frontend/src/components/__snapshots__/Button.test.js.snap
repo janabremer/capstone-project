@@ -2,22 +2,24 @@
 
 exports[`Button renders correctly 1`] = `
 .c0 {
-  font-size: inherit;
-  color: var(--primary-blue);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
   background-color: var(--primary-light-transparent);
+  border-radius: 10px;
+  border: none;
+  color: var(--primary-blue);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-size: inherit;
+  padding: 10px 20px;
   place-items: center;
 }
 
 <button
   class="c0"
 >
-  <span />
+  <span>
+    Click me
+  </span>
 </button>
 `;

@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 ProductInfo.propTypes = {
     name: PropTypes.string,
@@ -41,13 +41,13 @@ const ProductInfoStyled = styled.section`
 `
 
 const Heading = styled.h1`
-    text-transform: uppercase;
     font-size: 170%;
-    letter-spacing: 0.25rem;
     font-weight: 700;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
 `
 
 const Content = styled.span`
-    font-size: 120%;
     color: var(--secondary-dark);
+    font-size: 120%;
 `

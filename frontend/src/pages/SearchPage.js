@@ -1,8 +1,8 @@
-import styled from 'styled-components/macro'
 import { useState } from 'react'
-import getProductsBySearch from '../services/getProductsBySearch'
+import styled from 'styled-components/macro'
 import ResultList from '../components/ResultList'
 import SearchBar from '../components/SearchBar'
+import getProductsBySearch from '../services/getProductsBySearch'
 import PageStyled from '../styles/PageStyled'
 
 
@@ -27,6 +27,6 @@ export default function SearchPage() {
 
 
 const SearchPageStyled = styled(PageStyled)`
-    background-color: var(--primary-light);
     align-content: start;
+    background-color: var(--primary-light);
 `
