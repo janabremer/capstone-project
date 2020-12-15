@@ -17,7 +17,8 @@ export default function useProduct(productId) {
     const [photo, setPhoto] = useState({
         photographer: '',
         url: '',
-        pexelUrl: ''
+        pexelsUrl: '',
+        plattform: 'Pexels'
     })
 
     useEffect(() => {
@@ -43,7 +44,7 @@ export default function useProduct(productId) {
                 setPhoto({
                     photographer: photoData['photographer'],
                     url: photoData['src'].large,
-                    pexelUrl: photoData['url'],
+                    pexelsUrl: photoData['url'],
                 })
                 setPhotoState('SUCCESS')
             })

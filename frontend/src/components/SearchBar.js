@@ -1,24 +1,29 @@
-import styled from 'styled-components/macro'
-import { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components/macro'
+
+SearchBar.propTypes = {onSearch: PropTypes.func}
 
 export default function SearchBar({onSearch}) {
-    SearchBar.propTypes = {onSearch: PropTypes.func}
-    
     const [searchTerm, setSearchTerm] = useState('')
+    const searchField = useRef(null)
+    useEffect(()=>{
+        searchField.current.focus()
+    },[])
  
     return(
-        <SearchStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
+        <SearchBarStyled onKeyUp={handleKeyUp} onSubmit={handleSubmit}>
                 <label htmlFor="searchTerm" />
-                <InputField
+                <InputFieldStyled
                     name="searchTerm" 
+                    ref={searchField}
                     data-testid="search-input"
                     type="search"
-                    placeholder="Search for product"
+                    placeholder="search a product..."
                     onChange={handleChange}
                     value={searchTerm}
                 />
-        </SearchStyled>
+        </SearchBarStyled>
     )
     
     function handleChange(event) {
@@ -34,29 +39,30 @@ export default function SearchBar({onSearch}) {
         event.preventDefault()
     }
 }
-
-const SearchStyled = styled.form`
-    padding: 20px 40px;
+const SearchBarStyled = styled.form`
+    height: 50px;
 `
 
-const InputField = styled.input`
+const InputFieldStyled = styled.input`
     background-color: var(--primary-light-transparent);
-    border-radius: 25px;
     border: none;
-    /* border: solid 2px var(--secondary-dark); */
-    box-shadow:  0px 0px 20px var(--shadow-dark);
+    box-shadow:  0 0 20px var(--shadow-dark);
+    caret-color: var(--primary-blue);
     color: inherit;
-    font-family: 'Oswald', sans-serif;
-    font-size: 120%;
+    font-family: inherit;
+    font-size: inherit;
     font-weight: inherit;
     height: 50px;
-    padding: 12px;
-    text-align: center;
+    left: 0;
+    max-width: var(--max-width);
+    padding: 0 30px;
+    position: fixed;
+    right: 0;
+    text-align: start;
+    top: 0;
     width: 100%;
   
     &:focus {
-        border-radius: 25px;
-        border: solid 2px var(--primary-blue);
         outline: none;
     }
   `

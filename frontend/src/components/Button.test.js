@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
-import 'jest-styled-components'
 import user from '@testing-library/user-event'
+import 'jest-styled-components'
 import Button from './Button'
 
 const testProps = {
-    children: 'Click me',
+    text: 'Click me',
     onClick: () => {}
 }
 

@@ -3,17 +3,16 @@
 exports[`Gallery renders correctly 1`] = `
 .c1 {
   background-color: var(--primary-light-transparent);
-  border-radius: 25px;
-  box-shadow: 0px 0px 20px var(--shadow-dark);
   display: grid;
-  gap: var(--gap-medium);
-  padding: 25px;
+  gap: var(--gap-small);
+  padding: 15px 0;
   place-items: center;
   width: 100%;
 }
 
 .c2 {
-  font-size: 130%;
+  color: var(--secondary-dark);
+  font-size: 120%;
 }
 
 .c0 {

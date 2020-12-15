@@ -3,42 +3,41 @@
 exports[`ProductInfo renders correctly 1`] = `
 .c0 {
   background-color: var(--primary-light-transparent);
-  border-radius: 25px;
-  box-shadow: 0px 0px 20px var(--shadow-dark);
   display: grid;
-  gap: var(--gap-medium);
-  padding: 25px;
+  gap: var(--gap-small);
+  padding: 15px 0;
   place-items: center;
   width: 100%;
 }
 
 .c1 {
-  color: var(--primary-blue);
-  font-weight: 450;
-  -webkit-letter-spacing: .15em;
-  -moz-letter-spacing: .15em;
-  -ms-letter-spacing: .15em;
-  letter-spacing: .15em;
+  font-size: 170%;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.25rem;
+  -moz-letter-spacing: 0.25rem;
+  -ms-letter-spacing: 0.25rem;
+  letter-spacing: 0.25rem;
   text-transform: uppercase;
 }
 
 .c2 {
-  font-size: 130%;
+  color: var(--secondary-dark);
+  font-size: 120%;
 }
 
 <section
   class="c0"
 >
-  <h2
+  <h1
     class="c1"
   >
     apple
-  </h2>
+  </h1>
   <span
     class="c2"
   >
     822
-     litres (1kg)
+     litres / kg
   </span>
 </section>
 `;

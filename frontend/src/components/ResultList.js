@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
+import styled from 'styled-components/macro';
 
 export default function ResultList({results}) {
     ResultList.propTypes = {results: PropTypes.array}
@@ -17,25 +17,19 @@ export default function ResultList({results}) {
 }
 
 const ResultListStyled = styled.section`
-    align-content: start;
     display: grid;
-    gap: var(--gap-medium);
-    overflow-y: scroll;
-    padding: 40px;
 
     a {
+        color: inherit;
         text-decoration: none;
         width: 100%;
     }
 `
 
 const ResultItem = styled.div`
-    background-color: var(--primary-light-transparent);
-    border-radius: 15px;
-    box-shadow:  0px 0px 20px var(--shadow-dark);
-    color: var(--primary-blue);
-    font-weight: 450;
-    letter-spacing: .15em;
-    padding: 10px 20px;
+    border-bottom: solid 1px var(--shadow-dark);
+    letter-spacing: .2em;
+    padding: 20px 30px;
+    text-transform: lowercase;
     width: 100%;
 `

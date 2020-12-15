@@ -1,10 +1,13 @@
-import styled from 'styled-components/macro'
-import ProductInfo from '../components/ProductInfo'
-import useProduct from '../hooks/useProduct'
+import PropTypes from 'prop-types';
 import { useParams } from "react-router-dom";
-import defaultPhoto from '../assets/defaultPhoto.jpg'
-import PropTypes from 'prop-types'
-import Button from '../components/Button'
+import styled from 'styled-components/macro';
+import defaultPhoto from '../assets/backgroundPhoto.jpg';
+import Button from '../components/Button';
+import { ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
+import PhotoLink from '../components/PhotoLink';
+import ProductInfo from '../components/ProductInfo';
+import useProduct from '../hooks/useProduct';
+import BasePage from '../styles/BasePage';
 
 ProductPage.propTypes = {
     productId: PropTypes.number,
@@ -25,24 +28,21 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
     const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
 
     return(
-        <PageStyled imgSrc={imgSrc}>
-            <ProductInfo name={product.name} water={product.water} requestStatus={productState} />
-            {lastProduct && nextProductPage && <Button onClick={onLoadNext}>next</Button>}
-            {firstProduct && prevProductPage && <Button onClick={onLoadPrev}>previous</Button>}
-        </PageStyled>
+        <ProductPageStyled imgSrc={imgSrc}>
+            <ProductInfo name={product.name} water={product.water} apiState={productState} />
+            {lastProduct && nextProductPage && <Button text={'next'} onClick={onLoadNext} iconComponentRight={<ArrowRightIcon />} />}
+            {firstProduct && prevProductPage && <Button text={'previous'} onClick={onLoadPrev} iconComponentLeft={<ArrowLeftIcon />} />}
+            {photoState === 'ERROR' ? <PhotoLink /> : <PhotoLink photographer={photo.photographer} plattform={photo.plattform} url={photo.pexelsUrl} />}
+        </ProductPageStyled>
     )
 }
 
-const PageStyled = styled.main`
+const ProductPageStyled = styled(BasePage)`
+    align-items: start;
     background-image: url(${props => props.imgSrc});
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: grid;
     flex: 1 0 100%;
     gap: var(--gap-large);
-    height: 100vh;
-    padding: 40px;
-    place-items: end;
+    justify-items: center;
     scroll-snap-align: start;
 `

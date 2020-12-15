@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 ProductInfo.propTypes = {
     name: PropTypes.string,
@@ -25,7 +25,7 @@ export default function ProductInfo ({name, water, requestStatus}) {
             return(
                 <ProductInfoStyled>
                     <Heading>{name}</Heading>
-                    <Content>{water} litres (1kg)</Content>
+                    <Content>{water} litres / kg</Content>
                 </ProductInfoStyled>
             )
     }
@@ -33,22 +33,21 @@ export default function ProductInfo ({name, water, requestStatus}) {
 
 const ProductInfoStyled = styled.section`
     background-color: var(--primary-light-transparent);
-    border-radius: 25px;
-    box-shadow:  0px 0px 20px var(--shadow-dark);
     display: grid;
-    gap: var(--gap-medium);
-    padding: 25px;
+    gap: var(--gap-small);
+    padding: 15px 0;
     place-items: center;
     width: 100%;
 `
 
-const Heading = styled.h2`
-    color: var(--primary-blue);
-    font-weight: 450;
-    letter-spacing: .15em;
+const Heading = styled.h1`
+    font-size: 170%;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
     text-transform: uppercase;
 `
 
 const Content = styled.span`
-    font-size: 130%;
+    color: var(--secondary-dark);
+    font-size: 120%;
 `
