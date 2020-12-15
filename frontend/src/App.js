@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import ProductPage from './pages/ProductPage'
 import SearchPage from './pages/SearchPage'
 
+
 export default function App() {
   
     return (

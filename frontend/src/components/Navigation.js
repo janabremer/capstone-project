@@ -30,6 +30,7 @@ const NavigationStyled = styled.footer`
     height: 50px;
     justify-content: space-evenly;
     left: 0;
+    max-width: var(--max-width);
     padding: 0 20px;
     place-items: center;
     position: fixed;

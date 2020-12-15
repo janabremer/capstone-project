@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import ResultList from '../components/ResultList'
 import SearchBar from '../components/SearchBar'
 import getProductsBySearch from '../services/getProductsBySearch'
-import PageStyled from '../styles/PageStyled'
+import BasePage from '../styles/BasePage'
 
 
 export default function SearchPage() {
@@ -26,7 +26,6 @@ export default function SearchPage() {
 }
 
 
-const SearchPageStyled = styled(PageStyled)`
+const SearchPageStyled = styled(BasePage)`
     align-content: start;
-    background-color: var(--primary-light);
 `

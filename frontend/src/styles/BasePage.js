@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 
 const PageStyled = styled.main`
     background-attachment: fixed;
+    background-color: var(--primary-light);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

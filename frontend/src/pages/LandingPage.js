@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro'
 import backgroundPhoto from '../assets/backgroundPhoto.jpg'
 import { ReactComponent as Logo } from '../assets/logo.svg'
-import PhotoSource from '../components/PhotoSource'
-import PageStyled from '../styles/PageStyled'
+import PhotoLink from '../components/PhotoLink'
+import BasePage from '../styles/BasePage'
 
 export default function LandingPage() {
     return (
@@ -21,16 +21,16 @@ export default function LandingPage() {
                 Discover the app and find out about the water in your food!
             </Content>
 
-            <PhotoSource />
+            <PhotoLink />
         </LandingPageStyled>
 
     )
 }
 
-const LandingPageStyled = styled(PageStyled)`
+const LandingPageStyled = styled(BasePage)`
     background-image: url(${props => props.imgSrc});
     background-position: left;
-    padding: 50px;
+    padding: var(--padding);
     gap: var(--gap-large);
 `
 

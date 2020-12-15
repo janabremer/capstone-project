@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-PhotoSource.propTypes = {
-    protographer: PropTypes.string.isRequired,
+PhotoLink.propTypes = {
+    protographer: PropTypes.string,
     plattform: PropTypes.string,
-    link: PropTypes.string
+    url: PropTypes.string
 } 
 
 const defaultPhoto = {
@@ -13,13 +13,13 @@ const defaultPhoto = {
     url: 'https://unsplash.com/photos/79mNMAvSORg'
 }
 
-export default function PhotoSource ({photographer=defaultPhoto.photographer, plattform=defaultPhoto.plattform, url=defaultPhoto.url}) {
+export default function PhotoLink ({photographer=defaultPhoto.photographer, plattform=defaultPhoto.plattform, url=defaultPhoto.url}) {
     return(
-    <PhotoSourceStyled href={url} target="_blank">Photo by {photographer} on {plattform}</PhotoSourceStyled>
+    <PhotoLinkStyled href={url} target="_blank">Photo by {photographer} on {plattform}</PhotoLinkStyled>
     )
 }
 
-const PhotoSourceStyled = styled.a`
+const PhotoLinkStyled = styled.a`
     color: var(--primary-light-transparent);
     font-size: 50%;
     padding: 0 10px 10px 0;

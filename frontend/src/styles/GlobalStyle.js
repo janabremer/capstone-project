@@ -13,6 +13,8 @@ export default createGlobalStyle`
     --gap-large: 40px;
     --gap-medium: 20px;
     --gap-small: 10px;
+    --max-width: 500px;
+    --padding: 50px;
     --primary-blue: rgb(0, 187, 233);
     --primary-dark: rgb(0, 61, 77);
     --primary-light-transparent: rgba(245, 249, 250, 0.8);
@@ -28,6 +30,6 @@ body {
     font-size: 112.5%;
     height: 100vh;
     letter-spacing: .03em;
-    max-width: 600px;
+    max-width: var(--max-width);
 }
 `

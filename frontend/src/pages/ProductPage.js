@@ -4,10 +4,10 @@ import styled from 'styled-components/macro';
 import defaultPhoto from '../assets/backgroundPhoto.jpg';
 import Button from '../components/Button';
 import { ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
-import PhotoSource from '../components/PhotoSource';
+import PhotoLink from '../components/PhotoLink';
 import ProductInfo from '../components/ProductInfo';
 import useProduct from '../hooks/useProduct';
-import PageStyled from '../styles/PageStyled';
+import BasePage from '../styles/BasePage';
 
 ProductPage.propTypes = {
     productId: PropTypes.number,
@@ -32,12 +32,12 @@ export default function ProductPage({productId, lastProduct, nextProductPage, on
             <ProductInfo name={product.name} water={product.water} apiState={productState} />
             {lastProduct && nextProductPage && <Button text={'next'} onClick={onLoadNext} iconComponentRight={<ArrowRightIcon />} />}
             {firstProduct && prevProductPage && <Button text={'previous'} onClick={onLoadPrev} iconComponentLeft={<ArrowLeftIcon />} />}
-            {photoState === 'ERROR' ? <PhotoSource /> : <PhotoSource photographer={photo.photographer} plattform={photo.plattform} url={photo.pexelsUrl} />}
+            {photoState === 'ERROR' ? <PhotoLink /> : <PhotoLink photographer={photo.photographer} plattform={photo.plattform} url={photo.pexelsUrl} />}
         </ProductPageStyled>
     )
 }
 
-const ProductPageStyled = styled(PageStyled)`
+const ProductPageStyled = styled(BasePage)`
     align-items: start;
     background-image: url(${props => props.imgSrc});
     background-position: center;

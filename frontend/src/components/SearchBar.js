@@ -54,6 +54,7 @@ const InputFieldStyled = styled.input`
     font-weight: inherit;
     height: 50px;
     left: 0;
+    max-width: var(--max-width);
     padding: 0 30px;
     position: fixed;
     right: 0;
