@@ -19,7 +19,7 @@ describe('SearchBar', () => {
         })
     })
 
-    it('click on each ResultItem navigate to correct ProductPage', () => {
+    it('click on each ResultItem navigates to correct ProductPage', () => {
         const {getByText} = render (<MemoryRouter><ResultList results={results}/></MemoryRouter> )
         
         results.forEach(({category}) => {

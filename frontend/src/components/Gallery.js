@@ -1,35 +1,53 @@
 import ProductPage from '../pages/ProductPage'
 import ProductInfo from '../components/ProductInfo'
 import styled from 'styled-components/macro'
-import useAllProducts from '../hooks/useAllProducts'
+import useProductsPerPage from '../hooks/useProductsPerPage'
 
 export default function Gallery() {
-    const { products, apiState } = useAllProducts()
-    switch(apiState) {
+    const { products, updateApiPage, requestStatus } = useProductsPerPage()
+
+    switch(requestStatus) {
         case 'LOADING':
             return (
                 <GalleryStyled>
-                    <ProductInfo apiState={apiState} />
+                    <ProductInfo requestStatus={requestStatus} />
                 </GalleryStyled>
             )
         case 'ERROR':
             return (
                 <GalleryStyled>
-                    <ProductInfo apiState={apiState} />
+                    <ProductInfo requestStatus={requestStatus} />
                 </GalleryStyled>
             )
         default:
             return(
                 <GalleryStyled>
-                    {products.map(product =>
-                        <ProductPage key={product.id} productId={product.id} />
+                    {products.results.map((product, index) =>
+                        <ProductPage 
+                            key={product.id} 
+                            productId={product.id} 
+                            lastProduct={index+1 === products.results.length} 
+                            onLoadNext={handleLoadNext} 
+                            nextProductPage={!!products.nextPage} 
+                            firstProduct={index === 0} 
+                            onLoadPrev={handleLoadPrev} 
+                            prevProductPage={!!products.prevPage}
+                        />
                     )}
                 </GalleryStyled>
             )
     }
+    
+    function handleLoadNext(event) {
+        event.preventDefault()
+        updateApiPage(products.nextPage)
+    }
+
+    function handleLoadPrev(event) {
+        event.preventDefault()
+        updateApiPage(products.prevPage)
+    }
 }
-
-
 
 const GalleryStyled = styled.section`
     display: flex;
