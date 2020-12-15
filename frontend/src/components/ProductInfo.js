@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 ProductInfo.propTypes = {
     name: PropTypes.string,
     water: PropTypes.number,
-    apiState: PropTypes.string
+    requestStatus: PropTypes.string
 }
 
-export default function ProductInfo ({name, water, apiState}) {
-    switch (apiState) {
+export default function ProductInfo ({name, water, requestStatus}) {
+    switch (requestStatus) {
         case 'LOADING':
             return(
                 <ProductInfoStyled>

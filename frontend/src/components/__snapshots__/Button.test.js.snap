@@ -3,11 +3,21 @@
 exports[`Button renders correctly 1`] = `
 .c0 {
   font-size: inherit;
+  color: var(--primary-blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-light-transparent);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
 }
 
 <button
   class="c0"
 >
-  Click me
+  <span />
 </button>
 `;

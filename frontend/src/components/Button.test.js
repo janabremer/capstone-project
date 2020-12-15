@@ -5,7 +5,7 @@ import Button from './Button'
 
 const testProps = {
     text: 'Click me',
-    onClick: jest.fn()
+    onClick: () => {}
 }
 
 describe('Button', () => {

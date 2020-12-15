@@ -3,7 +3,7 @@ import getProductsPerPage from '../services/getProductsPerPage'
 
 export default function useProductsPerPage() {
     const [apiPage, setApiPage] = useState('/categories?page=1')
-    const [apiState, setApiState]= useState('LOADING')
+    const [requestStatus, setRequestStatus]= useState('LOADING')
     const [products, setProducts] = useState({
         results: [],
         total: null,
@@ -16,7 +16,7 @@ export default function useProductsPerPage() {
     
 
     useEffect(() => {
-        setApiState('LOADING')
+        setRequestStatus('LOADING')
         getProductsPerPage(apiPage) 
             .then(data => {
                 setProducts({
@@ -28,10 +28,10 @@ export default function useProductsPerPage() {
                     nextPage: data.links.next,
                     prevPage: data.links.prev
                 })
-                setApiState('SUCCESS')
+                setRequestStatus('SUCCESS')
             })
             .catch((error) => {
-                setApiState('ERROR')
+                setRequestStatus('ERROR')
             })
     }, [apiPage])
     
@@ -42,7 +42,7 @@ export default function useProductsPerPage() {
 
     return {
         products,
-        apiState,
+        requestStatus,
         updateApiPage
     }
 }

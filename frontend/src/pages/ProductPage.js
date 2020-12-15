@@ -22,7 +22,9 @@ ProductPage.propTypes = {
 export default function ProductPage({productId, lastProduct, nextProductPage, onLoadNext, firstProduct, prevProductPage, onLoadPrev}) {
 
     const { id } = useParams()
-    const { product, photo, productState, photoState } = useProduct(productId | id)
+    productId = (productId === undefined) ? id : productId
+
+    const { product, photo, productState, photoState } = useProduct(productId)
     const imgSrc = photoState === 'ERROR' ? defaultPhoto : photo.url
 
     return(
