@@ -2,23 +2,21 @@ import ProductPage from '../pages/ProductPage'
 import ProductInfo from '../components/ProductInfo'
 import styled from 'styled-components/macro'
 import useProductsPerPage from '../hooks/useProductsPerPage'
-import { useRef } from 'react'
 
 export default function Gallery() {
-    const { products, updateApiPage, apiState } = useProductsPerPage()
-    const ref = useRef()
+    const { products, updateApiPage, requestStatus } = useProductsPerPage()
 
-    switch(apiState) {
+    switch(requestStatus) {
         case 'LOADING':
             return (
                 <GalleryStyled>
-                    <ProductInfo apiState={apiState} />
+                    <ProductInfo requestStatus={requestStatus} />
                 </GalleryStyled>
             )
         case 'ERROR':
             return (
                 <GalleryStyled>
-                    <ProductInfo apiState={apiState} />
+                    <ProductInfo requestStatus={requestStatus} />
                 </GalleryStyled>
             )
         default:
@@ -36,7 +34,6 @@ export default function Gallery() {
                             prevProductPage={!!products.prevPage}
                         />
                     )}
-                    <div ref={ref}></div>
                 </GalleryStyled>
             )
     }

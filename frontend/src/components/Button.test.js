@@ -4,8 +4,8 @@ import user from '@testing-library/user-event'
 import Button from './Button'
 
 const testProps = {
-    text: 'Click me',
-    onClick: jest.fn()
+    children: 'Click me',
+    onClick: () => {}
 }
 
 describe('Button', () => {
