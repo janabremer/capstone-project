@@ -3,7 +3,6 @@ import Accordion from '../components/Accordion'
 import BasePage from '../styles/BasePage'
 
 export default function InfoPage() {
-
     return (
         <InfoPageStyled>
             <Accordion title='What is virtual water?' content='Virtual water is the “hidden” water, that is needed for the production of something.' />
@@ -16,4 +15,5 @@ export default function InfoPage() {
 
 const InfoPageStyled = styled(BasePage)`
     align-content: start;
+    padding-top: 20px;
 `

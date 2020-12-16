@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types'
-import styled from 'styled-components/macro'
-import { useState } from 'react'
-import ListBox from './ListBox'
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import styled from 'styled-components/macro';
 import { ArrowDownIcon, ArrowRightIcon } from './Icons';
-
+import ListItem from './ListItem';
 
 Accordion.propTypes = {
     title: PropTypes.string.isRequired,
@@ -18,21 +17,21 @@ export default function Accordion({title, content}) {
     }
 
     return(
-        <ListBox>
+        <ListItem>
             <Title onClick={toggleAccordion}>
                 {(toggleState === 'hidden') ? <ArrowRightIcon /> : <ArrowDownIcon />}
                 <span>{title}</span>
             </Title>
             {(toggleState === 'active') && <Content>{content}</Content> }
-        </ListBox>
+        </ListItem>
     )
 }
 
 const Title = styled.div`
-    font-size: 110%;
+    align-items: flex-start;
     display: flex;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    font-size: 110%;
     gap: 10px;
 
     svg {
@@ -42,9 +41,9 @@ const Title = styled.div`
 
 `
 const Content = styled.p`
-    padding: 20px 0 0 34px;
-    font-size: 95%;
     color: var(--secondary-dark);
+    font-size: 95%;
     letter-spacing: 0.05em;
+    padding: 20px 0 0 34px;
 `
 
