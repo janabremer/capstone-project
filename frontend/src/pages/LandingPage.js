@@ -15,15 +15,12 @@ export default function LandingPage() {
                 <h1>eat?</h1>
             </Heading>
             <Content>
-                Virtual water is the “hidden” water, that is needed for the production of something.
+                <p>Virtual water is the “hidden” water, that is needed for the production of something.</p>
+                <p>Discover the app and find out about the water in your food!</p>
             </Content>
-            <Content>
-                Discover the app and find out about the water in your food!
-            </Content>
-
-            <PhotoLinkStyled />
+            <PhotoLink />
         </LandingPageStyled>
-
+        
     )
 }
 
@@ -31,12 +28,13 @@ const LandingPageStyled = styled(BasePage)`
     background-image: url(${props => props.imgSrc});
     background-position: left;
     padding: var(--padding);
-    gap: var(--gap-large);
+    gap: var(--gap-extra-large);
 `
 
 const Heading = styled.section`
     color: var(--primary-light-transparent);
-    margin-bottom: var(--gap-extra-large);
+    
+    /* margin-bottom: var(--gap-extra-large); */
     h1 {
         font-size: 350%;
         font-weight: 800;
@@ -50,16 +48,14 @@ const Heading = styled.section`
     }
 `
 
-const Content = styled.p`
+const Content = styled.section`
     color: var(--primary-light-transparent);
+    display: grid;
+    gap: var(--gap-medium);
 `
 
 const LogoStyled = styled(Logo)`
     color: var(--primary-light-transparent);
-    height: 120px;
+    height: 130px;
     justify-self: center;
-`
-
-const PhotoLinkStyled = styled(PhotoLink)`
-    margin-right: -50px;
 `

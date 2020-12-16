@@ -8,7 +8,7 @@ export default function InfoPage() {
             <Accordion title='What is virtual water?' content='Virtual water is the “hidden” water, that is needed for the production of something.' />
             <Accordion title='Why is this important?' content='Lorem Ipsum...' />
             <Accordion title='What can I do?' content='Lorem Ipsum...' />
-            <Accordion title='Where is the data from?' content='Lorem Ipsum...' />
+            <Accordion title='Where does the data come from?' content='Lorem Ipsum...' />
         </InfoPageStyled>
     )
 }
