@@ -28,22 +28,24 @@ export default function Accordion({title, content}) {
 }
 
 const Title = styled.div`
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: nowrap;
+    align-items: start;
+    display: grid;
+    grid-template-columns: 28px auto;
     font-size: 110%;
-    gap: 10px;
+    gap: 10px; 
 
     svg {
         color: var(--primary-blue);
         stroke-width: 3px;
+        height: 28px;
+        width: 28px;
     }
-
 `
+
 const Content = styled.p`
     color: var(--secondary-dark);
     font-size: 95%;
     letter-spacing: 0.05em;
-    padding: 20px 0 0 34px;
+    padding: 20px 0 0 38px;
 `
 
