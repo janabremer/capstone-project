@@ -31,5 +31,7 @@ body {
     height: 100vh;
     letter-spacing: .03em;
     max-width: var(--max-width);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 `
