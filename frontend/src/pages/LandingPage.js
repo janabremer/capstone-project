@@ -21,7 +21,7 @@ export default function LandingPage() {
                 Discover the app and find out about the water in your food!
             </Content>
 
-            <PhotoLink />
+            <PhotoLinkStyled />
         </LandingPageStyled>
 
     )
@@ -58,4 +58,8 @@ const LogoStyled = styled(Logo)`
     color: var(--primary-light-transparent);
     height: 120px;
     justify-self: center;
+`
+
+const PhotoLinkStyled = styled(PhotoLink)`
+    margin-right: -50px;
 `

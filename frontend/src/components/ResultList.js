@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import styled from 'styled-components/macro';
+import ListBox from './ListBox'
 
 export default function ResultList({results}) {
     ResultList.propTypes = {results: PropTypes.array}
@@ -9,9 +10,9 @@ export default function ResultList({results}) {
             <ResultListStyled>
                 {Array.isArray(results) ? results.map(({id, category}) =>
                     <Link to={`/product/${id}`} key={id}>
-                        <ResultItem data-testid="result-item">{category}</ResultItem>
+                        <ListBox data-testid="result-item">{category}</ListBox>
                     </Link>) : 
-                    <ResultItem data-testid="not-found">Product not found</ResultItem>}
+                    <ListBox data-testid="not-found">Product not found</ListBox>}
             </ResultListStyled>
         )
 }
@@ -24,12 +25,4 @@ const ResultListStyled = styled.section`
         text-decoration: none;
         width: 100%;
     }
-`
-
-const ResultItem = styled.div`
-    border-bottom: solid 1px var(--shadow-dark);
-    letter-spacing: .2em;
-    padding: 20px 30px;
-    text-transform: lowercase;
-    width: 100%;
 `

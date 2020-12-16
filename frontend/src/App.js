@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom'
 import Gallery from './components/Gallery'
 import Navigation from './components/Navigation'
+import InfoPage from './pages/InfoPage'
 import LandingPage from './pages/LandingPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductPage from './pages/ProductPage'
@@ -20,6 +21,9 @@ export default function App() {
                 </Route>
                 <Route path="/search">
                     <SearchPage />
+                </Route>
+                <Route path="/info">
+                    <InfoPage />
                 </Route>
                 <Route path="/product/:id">
                     <ProductPage />
