@@ -10,3 +10,5 @@
 ###< symfony/framework-bundle ###
 
 requests.http
+.htaccess
+.env

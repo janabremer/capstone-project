@@ -31,5 +31,11 @@ body {
     height: 100vh;
     letter-spacing: .03em;
     max-width: var(--max-width);
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
 `

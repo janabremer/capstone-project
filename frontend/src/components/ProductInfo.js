@@ -35,7 +35,7 @@ const ProductInfoStyled = styled.section`
     background-color: var(--primary-light-transparent);
     display: grid;
     gap: var(--gap-small);
-    padding: 15px 0;
+    padding: 15px;
     place-items: center;
     width: 100%;
 `
@@ -44,10 +44,12 @@ const Heading = styled.h1`
     font-size: 170%;
     font-weight: 700;
     letter-spacing: 0.25rem;
+    text-align: center;
     text-transform: uppercase;
 `
 
 const Content = styled.span`
     color: var(--secondary-dark);
     font-size: 120%;
+    text-align: center;
 `

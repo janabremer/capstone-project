@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 
 Button.propTypes = {
     onClick: PropTypes.func,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
 }
 
 export default function Button({onClick, text, iconComponentLeft, iconComponentRight}) {
@@ -25,4 +25,7 @@ const ButtonStyled = styled.button`
     font-size: inherit;
     padding: 10px 20px;
     place-items: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3px;
 `

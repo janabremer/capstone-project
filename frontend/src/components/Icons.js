@@ -1,3 +1,4 @@
+import { ReactComponent as ArrowDownIcon } from '../assets/icons/arrow-down.svg'
 import { ReactComponent as ArrowLeftIcon } from '../assets/icons/arrow-left.svg'
 import { ReactComponent as ArrowRightIcon } from '../assets/icons/arrow-right.svg'
 import { ReactComponent as GalleryIcon } from '../assets/icons/gallery.svg'
@@ -11,6 +12,7 @@ export {
     GalleryIcon,
     SearchIcon,
     InfoIcon,
+    ArrowDownIcon,
     ArrowRightIcon,
     ArrowLeftIcon
 }
