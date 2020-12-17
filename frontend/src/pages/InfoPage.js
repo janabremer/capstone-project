@@ -7,11 +7,11 @@ export default function InfoPage() {
         <InfoPageStyled>
             <Accordion 
                 title='What is virtual water?' 
-                content='For the production and the trade of our food and all other products a lot of water is needed. This water is called "virtual water" or "hidden water".'
+                content='For the production and the trade of our food and all other products a lot of water is needed. For example, for watering plants or for feeding animals. This water is called "virtual water" or "hidden water".'
             />
             <Accordion 
                 title='Why is this important?' 
-                content='Water is valuable. Of the 4,000 liters of water we use on average every day, a lot is imported from other countries where there is only little water.' 
+                content='Clean fresh water is valuable. On average we use 4,000 liters of water every day. And a lot of this is imported from other countries where there is only little water.' 
             />
             <Accordion 
                 title='What can I do?' 
