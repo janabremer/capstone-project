@@ -6,10 +6,12 @@ import ListItem from './ListItem';
 
 Accordion.propTypes = {
     title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired
+    content: PropTypes.string.isRequired,
+    linkText: PropTypes.string,
+    url: PropTypes.string
 }
 
-export default function Accordion({title, content}) {
+export default function Accordion({title, content, linkText, url}) {
     const [toggleState, setToggleState] = useState('hidden');
 
     function toggleAccordion() {
@@ -22,7 +24,10 @@ export default function Accordion({title, content}) {
                 {(toggleState === 'hidden') ? <ArrowRightIcon /> : <ArrowDownIcon />}
                 <span>{title}</span>
             </Title>
-            {(toggleState === 'active') && <Content>{content}</Content> }
+            {(toggleState === 'active') && 
+                <Content>{content}
+                {linkText && <a href={url} target="_blank">{linkText}</a>}
+                </Content> }
         </ListItem>
     )
 }
@@ -47,5 +52,10 @@ const Content = styled.p`
     font-size: 95%;
     letter-spacing: 0.05em;
     padding: 20px 0 0 38px;
+    text-transform: none;
+
+    a {
+        color: var(--primary-blue);
+    }
 `
 

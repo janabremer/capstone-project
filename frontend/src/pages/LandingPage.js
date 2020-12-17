@@ -15,7 +15,9 @@ export default function LandingPage() {
                 <h1>eat?</h1>
             </Heading>
             <Content>
-                <p>Virtual water is the “hidden” water, that is needed for the production of something.</p>
+                <p>We drink about 3 liters of water every day. And we need about 120 liters for washing, brushing our teeth and cooking. But we actually consume a lot more - around 4,000 liters per day!</p>
+                <p>Where does this water come from?</p>
+                <p>For the production of our food and all other products a lot of water is needed. This water is called "virtual water" or "hidden water".</p>
                 <p>Discover the app and find out about the water in your food!</p>
             </Content>
             <PhotoLink />
