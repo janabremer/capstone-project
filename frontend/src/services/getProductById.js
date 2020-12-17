@@ -1,8 +1,5 @@
-import PropTypes from 'prop-types'
-
 export default function getProductById(id) {
-    getProductById.propTypes = {results: PropTypes.number}
-
-    return fetch(`http://virtualwater.local/products/${id}`)
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
+    return fetch(`${apiBaseUrl}/products/${id}`)
       .then(res => res.json())
   } 
