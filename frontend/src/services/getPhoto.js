@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 export default function getPhoto(queryParam) {
     getPhoto.propTypes = {results: PropTypes.string}
     
-    const PEXELS_API_KEY = process.env.REACT_APP_PEXELS_API_KEY
+    const pexelsApiKey = process.env.REACT_APP_PEXELS_API_KEY
     var myHeaders = new Headers()
-    myHeaders.append("Authorization", PEXELS_API_KEY)
+    myHeaders.append("Authorization", pexelsApiKey)
 
     var requestOptions = {
         method: 'GET',
