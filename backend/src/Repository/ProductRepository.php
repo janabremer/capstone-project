@@ -28,7 +28,7 @@ class ProductRepository extends ServiceEntityRepository
     public function findAllCategories(): array
     {
         return $this->createQueryBuilder('product')
-            ->andWhere("product.category != ''")
+            ->andWhere("product.category != 'null'")
             ->getQuery()
             ->execute();
     }
