@@ -1,0 +1,459 @@
+ID,Product name,Product name short,Green water,Blue water,Grey water
+1,Wheat (Durum wheat  Wheat and meslin),Wheat,1277,342,207
+2,Wheat or meslin flour,null,1292,347,210
+3,Wheat bread,null,1124,301,183
+4,Dry pasta,null,1292,347,210
+5,Wheat groats and meal,null,1423,382,231
+6,Wheat pellets,null,1423,382,231
+7,Wheat  starch,null,1004,269,163
+8,Wheat gluten  whether or not dried,null,2928,785,476
+9,Rice in the husk (paddy or rough),Rice  paddy,1146,341,187
+10,Rice  husked (brown),null,1488,443,242
+11,Rice  semi-milled or wholly milled  whether or not polished or glazed,null,1653,492,269
+12,Rice  broken,null,1710,509,278
+13,Rice flour,null,1800,535,293
+14,Rice groats and meal,null,1527,454,249
+15,Barley,Barley,1213,79,131
+16,Barley  rolled or flaked grains,null,1685,110,182
+17,Barley hulled pearled sliced or kibbled,null,1685,110,182
+18,Malt  not roasted,null,1662,108,180
+19,Malt  roasted,null,2078,135,225
+20,Beer made from malt,null,254,16,27
+21,Maize (corn),Maize,947,81,194
+22,Maize (corn),null,947,81,194
+23,Maize (corn) flour,null,971,83,199
+24,Maize (corn) groats and meal,null,837,72,171
+25,Maize (corn)  hulled  pearled  sliced or kibbled,null,1018,87,209
+26,Maize (corn) starch,null,1295,111,265
+27,Maize (corn) oil crude,null,1956,168,400
+28,Maize (corn) oil and its fractions refined but not chemically modified,null,1996,171,409
+29,Rye,Rye,1419,25,99
+30,Rye flour,null,1774,32,124
+31,Oats,Oats,1479,181,128
+32,Oat groats and meal,null,2098,257,182
+33,Oats  rolled or flaked grains,null,1998,245,173
+34,Oats  hulled pearled sliced or kibbled,null,2026,248,175
+35,Millet,Millet,4306,57,115
+36,Grain sorghum,Sorghum,2857,103,87
+37,Buckwheat,Buckwheat,2769,144,229
+38,Quinoa,Quinoa,4184,48,280
+39,Fonio,Fonio,4938,1,13
+40,Triticale,Triticale,826,38,89
+41,Canary seed,Canary seed,4872,2,314
+42,Mixed grain,Mixed grain,1598,33,28
+43,Cereals unmilled,Cereals,3316,115,9
+44,Cereal flour,null,3468,121,9
+45,Cereal groats and meal,null,2896,101,8
+46,Cereal pellets,null,2896,101,8
+47,Cereals  rolled or flaked grains,null,3902,136,10
+48,Cereals  hulled  pearled  sliced or kibbled,null,3902,136,10
+49,Germ of cereals  whole  rolled  flaked or ground,null,2757,96,7
+50,Potatoes  fresh or chilled,Potatoes,191,33,63
+51,Tapioca of potatoes,null,955,165,317
+52,Potatoes  frozen,null,382,66,127
+53,Potato flour and meal,null,955,165,317
+54,Potato flakes,null,694,120,230
+55,Potato starch,null,1005,173,333
+56,Sweet potatoes  fresh or dried  whether or not sliced or pelleted,Sweet potatoes,324,5,53
+57,Manioc (cassava)  fresh or dried  whether or not sliced or pelleted,Cassava,550,0,13
+58,Tapioca of cassava,null,2750,1,66
+59,Flour of cassava,null,1833,1,44
+60,Dried cassava,null,1571,1,38
+61,Manioc (cassava) starch,null,2200,1,53
+62,Yautia (cocoyam),Yautia (cocoyam),849,22,11
+63,Taro (coco yam),Taro (coco yam),587,3,15
+64,Yams,Yams,341,0,1
+65,Salad beetroot salsif celeriac radish and sim edibl roots fresh/chilld,null,348,15,22
+66,Arrowroot salep etc fr o drid whether o not slicd o pelletd and sago pith,null,348,15,22
+67,Roots and tubers,Roots and tubers,348,15,22
+68,Flour and meal of sago and of roots or tubers with hi starch or inulin content,null,1392,61,88
+69,Sugar cane  fresh or dried  whether or not ground,Sugar cane,139,57,13
+70,Raw sugar  cane,null,1107,455,104
+71,Refined sugar in solid form containg added flavourg or colourg matter,null,1184,487,111
+72,Refined sugar  in solid form,null,1184,487,111
+73,Maple sugar and maple syrup,null,1184,487,111
+74,Glucose and glucose syrup nt cntg fruct/cntg in dry state <20% by wt fruct,null,1184,487,111
+75,Glucose inc syrup cntg in dry state min 20% but <50% by wt of fructose,null,1184,487,111
+76,Fructose  chemically pure,null,1184,487,111
+77,Fructose and fructose syrup cntg in dry state >50% by wght of fructose,null,1184,487,111
+78,Cane molasses,null,350,144,33
+79,Sugar beet  fresh or dried  whether or not ground,Sugar beet,82,26,25
+80,Raw sugar  beet,null,535,167,162
+81,Molasses,null,139,43,42
+82,Sugar crops,Sugar crops,980,null,94
+83,Sugar  including invert sugar,null,9795,null,935
+84,Beans small red (Adzuki) dried shelled whether or not skinned or split,Beans  dry,3945,125,983
+85,Kidney beans and white pea beans drid shelld whether o not skinnd o split,null,3945,125,983
+86,Beans dried  shelled  whether or not skinned or split,null,3945,125,983
+87,Flour and meal of the dried leguminous vegetables of heading No 07.13,null,5479,173,1366
+88,Broad beans and horse beans dried shelled whether or not skinned or split,Broad beans  horse beans  dry,1317,205,496
+89,Peas dried  shelled  whether or not skinned or split,Peas  dry,1453,33,493
+90,Chickpeas  dried  shelled  whether or not skinned or split,Chick peas,2972,224,981
+91,Cow peas  dry,Cow peas  dry,6841,10,55
+92,Pigeon peas,Pigeon peas,4739,72,683
+93,Lentils dried  shelled  whether or not skinned or split,Lentils,4324,489,1060
+94,Bambara beans,Bambara beans,3162,71,34
+95,Vetches,Vetches,2031,109,213
+96,Lupins,Lupins,1350,21,506
+97,Urd mung black/green gram beans drid shelld whether/not skinnd/split,null,2217,250,650
+98,Pulses,Pulses,2217,250,650
+99,Brazil nuts  with shell,Brazil nuts  with shell,248,null,8
+100,Cashew nuts,Cashew nuts,12853,921,444
+101,Chestnuts  fresh or dried  whether or not shelled or peeled,Chestnuts,2432,174,144
+102,Almonds in shell fresh or dried,Almonds  with shell,4632,1908,1507
+103,Almonds fresh or dried shelled or peeled,null,9264,3816,3015
+104,Walnuts in shell  fresh or dried,Walnuts  with shell,2805,1299,814
+105,Walnuts  fresh or dried  shelled or peeled,null,5293,2451,1536
+106,Pistachios  fresh or dried  whether or not shelled or peeled,Pistachios,3095,7602,666
+107,Kolanuts,Kolanuts,23345,26,19
+108,Hazelnuts or filberts in shell fresh or dried,Hazelnuts  with shell,3813,1090,354
+109,Hazelnuts or filberts  fresh or dried  shelled or peeled,null,7627,2180,709
+110,Arecanuts,Arecanuts,10621,139,406
+111,Nuts edible  fresh or dried  whether or not shelled or peeled,Nuts,8379,1156,891
+112,Soya beans,Soybeans,2037,70,37
+113,Soya sauce,null,582,20,11
+114,Soya curd (tofu),null,543,19,10
+115,soybean ingredient into the soymilk,null,3574,123,65
+116,Soy burger,null,3574,123,65
+117,Soya bean flour and meals,null,2397,83,44
+118,Soya-bean oil crude  whether or not degummed,null,3900,135,71
+119,Soya-bean oil and its fractions  refined but not chemically modified,null,3980,137,73
+120,Soya-bean oil-cake and oth solid residues whether or not ground or pellet,null,1690,58,31
+121,Ground-nuts in shell not roasted or otherwise cooked,Groundnuts in shell,2469,150,163
+122,Ground-nuts shelld whether or not broken not roastd or otherwise cookd,null,3526,214,234
+123,Ground-nut oil  crude,null,6547,397,434
+124,Ground-nut oil and its fractions refined but not chemically modified,null,6681,405,442
+125,Ground-nut oil-cake and oth solid residues whether or not ground or pellet,null,1317,80,87
+126,Coconuts,Coconuts,2669,2,16
+127,Copra,null,2079,1,12
+128,Coconut (husked),null,1248,1,7
+129,Coconut (copra) oil crude,null,4372,3,26
+130,Coconut (copra) oil and its fractions refined but not chemically modified,null,4461,3,27
+131,Coconut/copra oil-cake and oth solid residues whether/not ground/pellet,null,829,1,5
+132,Coconut (coir) fibre  raw,null,3245,2,19
+133,Coconut (coir) fibre processd nt spun  tow noils and waste of coconut fib,null,2434,2,15
+134,Palm nuts and kernels  whether or not broken,null,2762,1,105
+135,Oil palm fruit,Oil palm,1057,0,40
+136,Palm oil  crude,null,4691,1,179
+137,Palm oil and its fractions refined but not chemically modified,null,4787,1,182
+138,Palm kernel or babassu oil  crude,null,5098,1,194
+139,Palm kernel/babassu oil their fract refind but not chemically modifid,null,5202,1,198
+140,Palm nut/kernel oil-cake and oth solid residues whether/not ground/pellet,null,802,0,31
+141,Olives,Olives,2470,499,45
+142,Olives provisionally preservd but nt suitable f immediate consumption,null,2470,499,45
+143,Olive oil  virgin,null,11826,2388,217
+144,Olive oil and its fractions refined but not chemically modified,null,12067,2437,221
+145,Oils and thr fract obt from olives ref'd/not not chem mod incl blends,null,5260,1062,96
+146,Castor oil seeds  whether or not broken,Castor oil seed,8423,1175,298
+147,Castor oil and its fractions whether/not refind but not chemically modifid,null,21058,2938,744
+148,Sunflower seeds  whether or not broken,Sunflower seed,3017,148,201
+149,Sunflower-seed or safflower oil  crude,null,5967,293,397
+150,Sunflower-sed/safflower oil and their fractions refind but nt chem modifid,null,6088,299,405
+151,Sunflower sed oil-cake and oth solid residues whether/not ground/pellet,null,1215,60,81
+152,Rape or colza seeds  whether or not broken,Rapeseed,1703,231,336
+153,Rape  colza or mustard oil crude,null,3162,429,624
+154,Rape colza o mustard oil and their fract refind but not chemically modifid,null,3226,438,636
+155,Rape/colza sed oil-cake and oth solid residues whether/not ground/pellet,null,837,114,165
+156,Safflower seeds  whether or not broken,Safflower seed,6000,938,283
+157,Sesamum seeds  whether or not broken,Sesame seed,8460,509,403
+158,Sesame oil and its fractions whether/not refind but not chemically modifid,null,19674,1183,936
+159,Mustard seeds  whether or not broken,Mustard seed,2463,1,345
+160,Poppy seeds  whether or not broken,Poppy seed,1723,null,464
+161,Melonseed,Melonseed,5087,56,41
+162,Seed cotton,Seed cotton,2282,1306,440
+163,Cotton seeds  whether or not broken,null,755,432,146
+164,Cotton lint,null,5163,2955,996
+165,Cotton linters,null,1474,844,284
+166,Cotton-seed oil crude  whether or not gossypol has been removed,null,2242,1283,432
+167,Cotton-seed and its fractions refined but not chemically modified,null,2242,1283,432
+168,Cotton sed oil-cake and oth solid residues whether or not ground or pellet,null,487,279,94
+169,Cotton  not carded or combed,null,5163,2955,996
+170,Cotton yarn waste (including thread waste),null,950,544,183
+171,Garnetted stock of cotton,null,1426,816,275
+172,Cotton waste,null,1677,960,323
+173,Cotton  carded or combed,null,5359,3067,1034
+174,Cotton fabric and finished textiles,null,5384,3253,1344
+175,Linseed  whether or not broken,Linseed,4730,268,170
+176,Linseed oil  crude,null,8445,478,303
+177,Linseed oil and its fractions  refined but not chemically modified,null,8618,488,310
+178,Linseed oil-cake and other solid residues whether or not ground or pellet,null,2816,160,101
+179,Hempseed,Hempseed,3257,12,417
+180,Oilseeds,Oilseeds,3230,131,61
+181,Shea nuts (karite nuts)  whether or not broken,null,3230,131,61
+182,Oil seeds and oleaginous fruits  whether or not broken,null,3230,131,61
+183,Flours and meals of oil seeds or oleaginous fruits except mustard,null,4037,163,76
+184,Jojoba oil and its fractions whether/not refind but not chemically modifid,null,3230,131,61
+185,Cabbages kohlrabi kale and sim edible brassicas fresh or chilled,Cabbages and other brassicas,181,26,73
+186,Globe artichokes  fresh or chilled,Artichokes,478,242,98
+187,Asparagus  fresh or chilled,Asparagus,1524,119,507
+188,Cabbage lettuce (head lettuce) fresh or chilled,Lettuce and chicory,133,28,77
+189,Lettuce  fresh or chilled,null,133,28,77
+190,Spinach N-Z spinach  and  orache spinach (garden spinach) fresh or chilled,Spinach,118,14,160
+191,Spinach  N-Z spinach and orache spinach (garden spinach)  frozen,null,338,39,457
+192,Tomatoes  fresh or chilled,Tomatoes,108,63,43
+193,Tomato juice  concentrated,null,539,316,213
+194,Tomato paste,null,431,253,171
+195,Tomato ketchup,null,270,158,107
+196,Tomato puree,null,360,211,142
+197,Peeled tomatoes,null,135,79,53
+198,Tomato  dried,null,2157,1265,853
+199,Tomato juice unfermented and not spirited whether or not sugared or sweet,null,135,79,53
+200,Cauliflowers and headed broccoli  fresh or chilled,Cauliflowers and broccoli,189,21,75
+201,Brussels sprouts  fresh or chilled,null,189,21,75
+202,Pumpkins  squash and gourds,Pumpkins  squash and gourds,228,24,84
+203,Cucumbers and gherkins  fresh or chilled,Cucumbers and gherkins,206,42,105
+204,Cucumbers and gherkins provisionally presvd but nt f immediate consumption,null,206,42,105
+205,Aubergines(egg-plants)  fresh or chilled,Eggplants (aubergines),234,33,95
+206,Peppers of the genus Capsicum or of the genus Pimenta fresh or chilled,Chillies and peppers  green,240,42,97
+207,Onions and shallots  fresh or chilled,Onions (inc. shallots)  green,176,44,51
+208,Onions provisionally preservd but nt suitable f immediate consumption,null,192,88,65
+209,Onions dried but not further prepared,Onions  dry,192,88,65
+210,Garlic  fresh or chilled,Garlic,337,81,170
+211,Garlic powder,null,1297,313,655
+212,Beans  shelled or unshelled  fresh or chilled,Beans  green,320,54,188
+213,Beans  frozen,null,456,76,269
+214,Peas  shelled or unshelled  fresh or chilled,Peas  green,382,63,150
+215,Peas  frozen,null,546,89,215
+216,String beans,String beans,301,104,143
+217,Carrots and turnips  fresh or chilled,Carrots and turnips,106,28,61
+218,Celery  other than celeriac  fresh or chilled,null,106,28,61
+219,Okra,Okra,474,36,65
+220,Maize  green,Maize  green,455,157,88
+221,Sweet corn  frozen,null,455,157,88
+222,Carobs,Carobs,4557,334,703
+223,Vegetables  fresh or chilled,Vegetables fresh,205,33,101
+224,Vegetables  frozen,null,292,47,144
+225,Mixtures of vegetables  frozen,null,205,33,101
+226,Vegetables and mixtures provis presvd but nt f immediate consumptn,null,205,33,101
+227,Vegetables and mixtures dried  but not further prepared,null,584,94,288
+228,Vegetable products used primarily for human consumption,null,205,33,101
+229,Bananas including plantains  fresh or dried,null,660,97,33
+230,Bananas,Bananas,660,97,33
+231,Plantains,Plantains,1570,27,6
+232,Oranges  fresh or dried,Oranges,401,110,49
+233,Orange juice unfermentd and not spiritd whether/not sugard/sweet frozen,null,729,199,90
+234,Orange juice unfermentd and not spiritd whether or not sugard or sweet,null,729,199,90
+235,Mandarins(tang and sats)clementines and wilkgs  and sim citrus hybrids fresh/drid,Tangerines  mandarins  clem.,479,118,152
+236,Lemons and limes  fresh or dried,Lemons and limes,432,152,58
+237,Grapefruit  fresh or dried,Grapefruit (inc. pomelos),367,85,54
+238,Grapefruit juice unfermentd and not spiritd whether or not sugard or sweet,null,490,114,71
+239,Citrus fruits  fresh or dried,Citrus fruit,1145,62,35
+240,Peel of citrus fruit/melons (watermelons) fresh frz drid/prov presvd,null,1370,74,42
+241,Citrus fruit juice exc mx unferment unspiritd wthr/nt sug/sweet,null,1459,79,45
+242,Fruit and veg juice (exc mx) unferment unspiritd whether/not sug/sweet,null,1459,79,45
+243,Mixtures of juices unfermentd and not spiritd whether o not sugard o sweet,null,1459,79,45
+244,Apples  fresh,Apples,561,133,127
+245,Apples  dried,null,4678,1111,1058
+246,Apple juice unfermented and not spiritd whether or not sugard or sweetend,null,780,185,176
+247,Pears and quinces  fresh,Pears,645,94,183
+248,Apricots  fresh,Apricots,694,502,92
+249,Apricots  dried,null,2392,1730,316
+250,Sour cherries,Sour cherries,1098,213,99
+251,Cherries  fresh,Cherries,961,531,112
+252,Cherries provisionally preservd but unsuitable f immediate consumption,null,961,531,112
+253,Peaches  including nectarines  fresh,Peaches and nectarines,583,188,139
+254,Plums and sloes  fresh,Plums and sloes,1570,188,422
+255,Prunes  dried,null,4487,537,1204
+256,Stone fruit,Stone fruit,868,1049,136
+257,Mixtures of edible nuts or dried fruits of this chapter,null,868,1049,136
+258,Apricot peach/plum stones and kernels usd primly f human consumption,null,868,1049,136
+259,Strawberries  fresh,Strawberries,201,109,37
+260,Strawberries uncookd o steamd o boild in water sweetend o not frozen,null,201,109,37
+261,Strawberries provis preservd but unsuitable f immediate consumption,null,201,109,37
+262,Raspberries  blackberries  mulberries and loganberries  fresh,Raspberries,293,53,67
+263,Raspberries mulberries etc uncook steam/boil in water sweetend/nt froz,null,293,53,67
+264,Gooseberries,Gooseberries,487,8,31
+265,Black  white or red currants and gooseberries  fresh,null,457,19,23
+266,Currants,Currants,457,19,23
+267,Blueberries,Blueberries,341,334,170
+268,Cranberries  bilberries and other fruits of the genus Vaccinium  fresh,Cranberries,91,108,77
+269,Berries,Berries,200,175,74
+270,Grapes  fresh,Grapes,425,97,87
+271,Grapes  dried,null,1700,386,347
+272,Grape juice (incl grape must) unferment and unspiritd wthr/nt sug/sweet,null,567,129,116
+273,Grape wines  sparkling,null,607,138,124
+274,Grape wines incl fort and grape must unfermntd by add alc in ctnr</=2l,null,494,112,101
+275,Grape wines incl fort and grape must unfermntd by add alc in ctnr > 2l,null,494,112,101
+276,Grape must  unfermented  other than that of heading No 20.09,null,494,112,101
+277,Vermouth and oth grape wines flav w plants o arom subst in ctnr </= 2 l,null,607,138,124
+278,Vermouth and oth grape wines flav with plants or arom subst in ctnr > 2 l,null,607,138,124
+279,Fermented beverages (for example  cider  perry  mead  etc),null,607,138,124
+280,Spirits obtained by distilling grape wine or grape marc,null,607,138,124
+281,Watermelons,Watermelons,150,25,63
+282,Other melons (inc.cantaloupes),Other melons (inc.cantaloupes),125,29,67
+283,Figs  fresh or dried,Figs,1504,1544,227
+284,Guavas  mangoes and mangosteens  fresh or dried,Mangoes  mangosteens  guavas,1314,362,124
+285,Avocados  fresh or dried,Avocados,849,237,87
+286,Pineapples  fresh or dried,Pineapples,215,9,31
+287,Pineapple juice unfermented and not spiritd whether or not sugard or sweet,null,1075,45,153
+288,Dates  fresh or dried,Dates,930,1250,98
+289,Cashewapple,Cashewapple,3638,34,121
+290,Kiwi fruit,Kiwi fruit,307,168,38
+291,Papaws (papayas)  fresh,Papayas,399,40,21
+292,Fruit  tropical fresh,Fruit  tropical fresh,1455,200,172
+293,Fruits  fresh,Fruit Fresh,1199,201,112
+294,Fruits  dried,null,4794,806,448
+295,Coffee  not roasted  not decaffeinated,Coffee  green,15249,116,532
+296,Coffee  not roasted  decaffeinated,null,15249,116,532
+297,Coffee  roasted  not decaffeinated,null,18153,139,633
+298,Coffee  roasted  decaffeinated,null,18153,139,633
+299,Cocoa beans  whole or broken  raw or roasted,Cocoa beans,19745,4,179
+300,Cocoa shells  husks  skins and other cocoa waste,null,2662,1,24
+301,Cocoa paste not defatted,null,24015,5,218
+302,Cocoa paste wholly or partly defatted,null,24015,5,218
+303,Cocoa butter  fat and oil,null,33626,7,305
+304,Cocoa powder  not containing added sugar or other sweetening matter,null,15492,3,141
+305,Chocolate,null,16805,198,193
+306,Cocoa powder  containing added sugar or other sweetening matter,null,15492,3,141
+307,Tea,Tea,7232,898,726
+308,Green tea (not fermented) in packages not exceeding 3 kg,null,null,898,726
+309,Green tea (not fermented) in packages exceeding 3 kg,null,null,898,726
+310,Black tea (fermented) and partly fermentd tea in packages not exceedg 3 kg,null,7232,898,726
+311,Black tea (fermented)  and  partly fermented tea in packages exceedg 3 kg,null,7232,898,726
+312,Hop cones  not ground  powdered or pelleted,Hops,2382,269,1414
+313,Hop cones  ground  powdered or pelleted and lupulin,null,2382,269,1414
+314,Hop extract,null,9528,1077,5654
+315,Pepper of the genus Piper ex cubeb pepper neither crushd nor ground,Pepper (Piper spp.),6540,467,604
+316,Pepper of the genus Piper  except cubeb pepper  crushed or ground,null,6540,467,604
+317,Fruits of the genus Capsicum or Pimenta  dried  crushed or ground,Chillies and peppers  dry,5869,1125,371
+318,Vanilla beans,Vanilla,86392,39048,1065
+319,Cinnamon and cinnamon-tree flowers neither crushed nor ground,Cinnamon (canella),14853,41,632
+320,Cinnamon and cinnamon-tree flowers crushed or ground,null,14853,41,632
+321,Cloves (whole fruit  cloves and stems),Cloves,59834,30,1341
+322,Nutmeg  Mace  Cardamons,Nutmeg  mace and cardamoms,30683,2623,1014
+323,Anise or badian seeds,Anise  badian  fennel  corian.,5369,1865,1046
+324,Coriander seeds,null,5369,1865,1046
+325,Ginger,Ginger,1525,40,92
+326,Turmeric (curcuma),null,1525,40,92
+327,Curry,null,1525,40,92
+328,Mixtures of two/more of the prods of different headgs to this chapter,null,2735,242,390
+329,Spices,Spices,2735,242,390
+330,Peppermint,Peppermint,206,63,19
+331,Flax fibre  raw or retted,Flax fibre and tow,2637,443,401
+332,Flax fibre  broken or scutched,null,2637,443,401
+333,Flax fibre  otherwise processed but not spun,null,2866,481,436
+334,Flax tow and waste (including yarn waste and garnetted stock),null,581,98,88
+335,True hemp fibre (Cannabis sativa l)  raw or retted,Hemp Tow Waste,1824,null,624
+336,True hemp fibre otherwise processd but not spun  tow and waste of true hemp,null,2026,null,693
+337,Jute and other textile bast fibres  raw or retted,Jute,2356,33,217
+338,Jute and other tex bast fib not spun  tow and waste of these fibres,null,2618,37,241
+339,Other Bastfibres,Other Bastfibres,3492,200,500
+340,Ramie  and  other vegetable textile fibers  raw or processed but not spun   tow  noils  and  waste of these fibres,Ramie,3712,201,595
+341,Sisal,Sisal,6112,708,222
+342,Sisal and other textile fibres of the genus Agave  raw,null,6112,708,222
+343,Sisal textile fibres processed but not spun  tow and waste of sisal fibres,null,6791,787,246
+344,Agave Fibres,Agave Fibres,6434,9,106
+345,Abaca fibre  raw,Manila Fibre (Abaca),19376,246,766
+346,Abaca fibre processed but not spun  tow noils and waste of abaca fibres,null,21529,273,851
+347,Fibre Crops,Fibre Crops,5796,142,270
+348,Vegetable textile fibres  raw,null,5796,142,270
+349,Vegetable tex fib processd nt spun  tow noils and waste of these fibres,null,6440,157,300
+350,Tobacco  unmanufactured  not stemmed or stripped,Tobacco  unmanufactured,2021,205,700
+351,Tobacco  unmanufactured  partly or wholly stemmed or stripped,null,2021,205,700
+352,Tobacco refuse,null,2021,205,700
+353,Horses  live pure-bred breeding,Horses,37179,2462,971
+354,Horses  live except pure-bred breeding,null,37179,2462,971
+355,Asses  mules and hinnies  live,Asses  mules  hinnies,37179,2462,971
+356,Bovine  live pure-bred breeding,Bov.animals pure breedng,7002,256,219
+357,Bovine  live except pure-bred breeding,Other bovine animals,7002,256,219
+358,Swine  live pure-bred breeding,Swine pure for breeding,3155,276,400
+359,Swine  live except pure-bred breeding weighing less than 50 kg,Other swine  live,3155,276,400
+360,Swine  live except pure-bred breeding weighing 50 kg or more,null,3155,276,400
+361,Sheep  live,Sheep  live,4278,207,33
+362,Goats  live,Goats  live,2900,175,3
+363,Fowls  live domestic weighing not more than 185 g,Poultry  live  to 185g,277,23,36
+364,Poultry  live except domestic fowls  weighing not more than 185 g,null,2765,234,364
+365,Poultry  live except domestic fowls  weighing more than 185 g,Poultry  live over 185g,2765,234,364
+366,Bovine carcasses and half carcasses  fresh or chilled,Bovine meat fh ch w.bone,10234,389,320
+367,Bovine cuts bone in  fresh or chilled,null,10234,389,320
+368,Bovine cuts boneless  fresh or chilled,Bovine meat fh ch bnless,14414,550,451
+369,Bovine carcasses and half carcasses  frozen,Bovine meat frozn w.bone,10234,389,320
+370,Bovine cuts bone in  frozen,null,10234,389,320
+371,Bovine cuts boneless  frozen,Bovine meat frz boneless,14414,550,451
+372,Swine carcasses and half carcasses  fresh or chilled,Meat of swine frsh chlld,3582,325,454
+373,Hams  shoulders and cuts thereof  of swine bone in  fresh or chilled,null,4652,435,590
+374,Swine cuts  fresh or chilled,null,4907,459,622
+375,Swine carcasses and half carcasses  frozen,Meat of swine  frozen,3582,325,454
+376,Hams  shoulders and cuts thereof  of swine  bone in  frozen,null,4652,435,590
+377,Swine cuts  frozen,null,4907,459,622
+378,Lamb carcasses and half carcasses  fresh or chilled,null,5008,254,39
+379,Sheep carcasses and half carcasses  fresh or chilled,Meat of sheep frsh chlld,7851,398,61
+380,Sheep cuts  bone in  fresh or chilled,null,7851,408,61
+381,Sheep cuts  boneless  fresh or chilled,null,9813,522,76
+382,Lamb carcasses and half carcasses  frozen,null,5008,254,39
+383,Sheep carcasses and half carcasses  frozen,Meat of sheep  frozen,7851,398,61
+384,Sheep cuts  bone in  frozen,null,7851,408,61
+385,Sheep cuts  boneless  frozen,null,9813,522,76
+386,Goat meat  fresh  chilled or frozen,Meat of goats,5185,330,6
+387,Horse  ass  mule or hinny meat  fresh  chilled or frozen,Meat of horses mules etc,47367,3175,1237
+388,Bovine edible offal  fresh or chilled,Edible offal bov.frsh ch,10433,396,326
+389,Bovine tongues  edible offal  frozen,null,24751,940,774
+390,Bovine livers  edible offal  frozen,null,7291,277,228
+391,Bovine edible offal  frozen,Edible offal bov. frozen,11824,449,370
+392,Swine edible offal  fresh or chilled,Edible offal swine fh ch,1030,93,131
+393,Swine livers  edible offal  frozen,null,562,51,71
+394,Swine edible offal  frozen,Edible offal swine frzen,1030,93,131
+395,Sheep  goats  asses  mules or hinnies edible offal  fresh or chilled,Ed.off.sheep horse fh ch,2978,151,23
+396,Sheep  goats  asses  mules or hinnies edible offal  frozen,Ed.off.sheep horse frozn,2978,151,23
+397,Pig fat lean meat freepoultry fat unrenderd frsh chilld frozn or curd,Pig poultry fat unrendrd,3545,313,467
+398,Hams  shoulders and cuts thereof  of swine bone in  cured,Hams shoulders with bone,4747,449,602
+399,Bellies  streaky and cuts thereof  swine cured,Bellies (streaky),5007,474,635
+400,Swine meat cured,Oth.pigmeat dry salt smk,5117,472,649
+401,Bovine meat cured,Bov.meat dried smkd salt,22247,856,696
+402,Milk not concentrated and unsweetened not exceeding 1% fat,Milk fat cont.1% or less,863,86,72
+403,Milk not concentratedunsweetened exceeding 1% not exceeding 6% fat,Milk cream fat cont.1-6%,891,88,75
+404,Milk and cream not concentrated and unsweetened exceeding 6% fat,Cream fat content 6%+,1605,159,134
+405,Milk powder not exceeding 1.5% fat,Milk solid  to 1.5% fat,4011,398,336
+406,Milk and cream powder unsweetened exceeding 1.5% fat,Milk crm solid 1.5%+ fat,4011,398,336
+407,Milk and cream powder sweetened exceeding 1.5% fat,null,4011,408,336
+408,Milk and cream unsweetened,Milk cream unsweetened,1334,132,112
+409,Milk and cream sweetened,Milk cream  sweetened,1605,164,134
+410,Yogurt concentratd o not sweetend o not flavourd o contg fruit o cocoa,Yogurt,1003,99,84
+411,Buttermilk curdled milkcream kephirferm or acid milkcream,Buttermilk,1352,134,113
+412,Whey whether or not concentrated or sweetened,Whey,547,54,46
+413,Products consisting of natural milk constituents sweetened or not,Milk products,1003,99,84
+414,Butter,butter,4695,465,393
+415,Cheese  fresh (including whey cheese) unfermented  and curd,Fresh cheese unfermented,2687,266,225
+416,Cheese  grated or powdered  of all kinds,Cheese  powdered  grated,4264,439,357
+417,Cheese processed  not grated or powdered,Processed cheese  whole,4264,439,357
+418,Cheese  blue-veined,Blue-veined cheese,4264,439,357
+419,Cheese,Other cheese  curd,4264,439,357
+420,Eggs  bird  in shell  fresh  preserved or cooked,Birds' eggs  in shell,2592,244,429
+421,Egg yolks dried,Egg unshelld,5184,508,857
+422,Egg yolks,Egg unshelld,2592,249,429
+423,Eggs  bird  not in shell  dried,null,3840,375,635
+424,Eggs  bird  not in shell,null,2880,276,476
+425,Bristles  hair and waste of pigs  hogs or boars,Bristle hair for brushes,11459,1040,1452
+426,Horsehairwaste put up or not as a layer with or without supg material,Horsehair and waste,78614,5269,2053
+427,Semen bovine,Bovine semen,null,40581,33430
+428,Turkey meat and meat offal prepared or preserved  excluding livers,Poultry prprd prsrvd,3545,313,467
+429,Dom fowl duck gooseguinea fowl meatmeat offal prep/presvd exc livers,null,3545,313,467
+430,Hams and cuts thereof of swine prepared or preserved,Pork prepred presrvd,5287,500,670
+431,Shoulders and cut thereof of swine prepared or preserved,null,4747,444,602
+432,Swine meatmeat offal/exc livers/ incl mixtures prepard o preservd,null,1125,102,143
+433,Bovine meat and meat offal excluding livers  prepared or preserved,Bov.meat prpd prsrvd,17388,660,544
+434,Bovine skins  whole  raw,Whole bovin.hide<8kg dry,6366,242,199
+435,Bovine hides  whole  fresh or wet-salted,Bovine hides skins fresh,7958,315,249
+436,Butts and bends  bovine  fresh or wet-salted,null,7958,315,249
+437,Hide sections  bovine  fresh or wet-salted,null,7958,315,249
+438,Bovine hides  raw,Bovine hides skins other,6366,242,199
+439,Equine hides and skins  raw,Equine hides skins,13132,499,411
+440,Sheep or lamb skins  raw  with wool on,Sheep skin excpt.furskin,3107,158,24
+441,Sheep or lamb skins  pickled  without wool on,Sheep skin without wool,3270,171,25
+442,Sheep or lamb skins  raw  o/t pickled  without wool on,null,3270,171,25
+443,Goat or kid hides and skins  raw,Goat kid skin ex.furskin,4611,294,5
+444,Bovine skin leather  whole,Whole bovine skin leathr,15916,679,498
+445,Bovine leather  vegetable pre-tanned,Oth.bov. eqn.lthr tanned,15916,669,498
+446,Bovine leather  otherwise pre-tanned,null,15916,649,498
+447,Bovine and equine leather  tanned or retanned,null,15916,649,498
+448,Bovine and equine leather  full/split grains,Oth.bov. eqn.lthr preprd,15916,689,498
+449,Bovine and equine leather,null,32829,1322,1027
+450,Sheep or lamb skin leather  vegetable pre-tanned,Sheepskin leather tanned,3634,212,28
+451,Sheep or lamb skin leather  otherwise pre-tanned,null,3634,212,28
+452,Sheep or lamb skin leather  tanned or retanned,null,3634,212,28
+453,Sheep or lamb skin leather,Sheepskin leather preprd,3634,212,28
+454,Goat or kid skin leather  vegetable pre-tanned,Goatskin leather tanned,5123,349,6
+455,Goat or kid skin leather  otherwise pre-tanned,null,5123,349,6
+456,Goat or kid skin leather  tanned or retanned,null,5123,349,6
+457,Goat or kid skin leather,Goatskin leather preprd,5123,349,6
+458,Swine leather,Leather of swine,15278,1387,1936

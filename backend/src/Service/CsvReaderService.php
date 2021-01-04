@@ -16,8 +16,8 @@ class CsvReaderService {
 
     public function useData(): void 
     {
-        $csv = Reader::createFromPath('%kernel.root_dir%/../data/crop-products.csv', 'r');
-        $csv->setDelimiter(';');
+        $csv = Reader::createFromPath('%kernel.root_dir%/../data/products.csv', 'r');
+        $csv->setDelimiter(',');
         $records = $csv->getRecords();
 
         foreach ($records as $index => $row) {
