@@ -6,6 +6,10 @@ This project was bootstrapped with [Composer](https://getcomposer.org/).
 
 Run `$ composer install` to install all packages the project depends on.
 
+## Environment Variables
+
+To run the project on your server, setup your own .env file.
+
 ## Data Import
 
 The project works with data from the [water footprint network](https://waterfootprint.org/en/resources/waterstat/product-water-footprint-statistics/).
